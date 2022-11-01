@@ -9,6 +9,11 @@
 
 body {
   margin:0;
+  background-color: hotpink;
+  /* display: flex;
+  flex-direction: column; */
+  display: grid;
+  place-content: center;
 }
 
 button:not([disabled]) {
@@ -24,7 +29,12 @@ button:not([disabled]) {
 /*********************/
 
 :root {
-  --color-headings:crimson
+  --color-headings:black;
+  --color-egg: rgb(230 230 230);
+  --color-egg-shadow: rgb(0 0 0 / 0.2);
+  --color-egg-highlight: rgb(255 255 255 / 0.3);
+  --color-yoshigreen: green;
+  --color-white: white;
 }
 
 
@@ -34,12 +44,149 @@ button:not([disabled]) {
 /********************/
 /* ALGEMENE STYLING */
 /********************/
+/* header {
+  order: 1;
+} */
 
-h1 {
-  color:var(--color-headings);
+main {
+  perspective: 62em;
+}
+
+header section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header section button:first-of-type,
+header section button:nth-of-type(2) {
+  background-color: var(--color-yoshigreen);
+  color: var(--color-white);
+  border: unset;
+  padding: .3em;
+  font-size: 1.8em;
+  width: 2em;
+  height: 2.1em;
+  text-align: center;
+  border-radius: 50%;
 }
 
 
-/* ... */
+h1 {
+  color:var(--color-headings);
+  font-family: puffin-arcade-nerf, sans-serif;
+}
+
+h2,
+li,
+button,
+p {
+  font-family: mundial, sans-serif;
+  font-weight: 300;
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  /* order: 2; */
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: translateZ(-288px);
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+ol li {
+  position: absolute;
+  width: 10em;
+  height: 14em;
+  left: 1em;
+  top: 1em;
+  
+  /* line-height: 116px; */
+
+}
+
+
+ol li button {
+  width: 10em;
+  height: 14em;
+  position: relative;
+
+  display: grid;
+  place-content: center;
+
+  border: unset;
+  background-color: transparent;
+
+}
+
+ol li:nth-child(1) { transform: rotateY(0deg) translateZ(30em); }
+ol li:nth-child(2) { transform: rotateY(32deg) translateZ(30em); }
+ol li:nth-child(3) { transform: rotateY(64deg) translateZ(30em); }
+ol li:nth-child(4) { transform: rotateY(96deg) translateZ(30em); }
+ol li:nth-child(5) { transform: rotateY(128deg) translateZ(30em); }
+ol li:nth-child(6) { transform: rotateY(160deg) translateZ(30em); }
+ol li:nth-child(7) { transform: rotateY(192deg) translateZ(30em); }
+ol li:nth-child(8) { transform: rotateY(224deg) translateZ(30em); }
+ol li:nth-child(9) { transform: rotateY(256deg) translateZ(30em); }
+ol li:nth-child(10) { transform: rotateY(288deg) translateZ(30em); }
+ol li:nth-child(11) { transform: rotateY(320deg) translateZ(30em); }
+
+ol li button img {
+  width: 8em;
+  aspect-ratio: 1/1;
+  z-index: -1;
+}
+
+ol li button:before,
+ol li button:after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+
+  margin: 0;
+  height: 13em;
+  aspect-ratio: 1/1;
+
+  transform: rotate(-45deg);
+
+  background-color: var(--color-egg);
+  border-radius: 80% 20% 50% 50% / 50% 20% 80% 50%;
+  box-shadow: 
+    inset 1em 2em 1em var(--color-egg-shadow),
+    inset -1em -3em 1em var(--color-egg-highlight),
+    inset -.5em -.5em 1em var(--color-egg-highlight);
+
+  background-image:
+		radial-gradient(closest-side circle, var(--color-yoshigreen) 100%, transparent),
+    radial-gradient(closest-side circle,var(--color-yoshigreen) 100%, transparent),
+		radial-gradient(closest-side circle,var(--color-yoshigreen) 100%, transparent);
+	background-size: 50% 50%, 40% 40%, 60% 60%;
+	background-position: -40% 20%, 110% -30%, 90% 100%;
+	background-repeat: no-repeat;
+}
+
+/* Created clip-paths with Clippy: https://bennettfeely.com/clippy/*/
+ol li button:before {
+  clip-path: polygon(100% 0, 100% 100%, 88% 84%, 76% 58%, 52% 52%, 35% 21%, 20% 18%, 0 0);
+}
+
+ol li button:after {
+  clip-path: polygon(0 100%, 100% 100%, 88% 84%, 76% 58%, 52% 52%, 35% 21%, 20% 18%, 0 0);
+}
+
+ol li button:hover:before {
+  transform: translateY(-2em) rotate(-60deg);
+  transition: .5s;
+}
+
+
+
 
 
