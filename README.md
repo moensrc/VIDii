@@ -27,10 +27,10 @@ Mijn startniveau is: zwart
 
   ### De eerste versie/schets:
   #### Concept 1
-  <img src="./readme-images/schets-concept1.JPG" width="51%" alt="Concept 1 - schets 1"> <img src="./readme-images/schets-concept1-2.JPG" width="45%" alt="Concept 1 - schets 2">
+  <img src="./readme-images/schets-concept1.jpg" width="51%" alt="Concept 1 - schets 1"> <img src="./readme-images/schets-concept1-2.jpg" width="45%" alt="Concept 1 - schets 2">
 
   #### Concept 2
-  <img src="./readme-images/schets-concept2.JPG" width="48%" alt="Concept 2 - schets 1"> <img src="./readme-images/schets-concept2-2.JPG" width="48%" alt="Concept 2 - schets 3"> <img src="./readme-images/schets-concept2-1.JPG" width="97%" alt="Concept 2 - schets 2"> 
+  <img src="./readme-images/schets-concept2.jpg" width="48%" alt="Concept 2 - schets 1"> <img src="./readme-images/schets-concept2-2.jpg" width="48%" alt="Concept 2 - schets 3"> <img src="./readme-images/schets-concept2-1.jpg" width="97%" alt="Concept 2 - schets 2"> 
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
