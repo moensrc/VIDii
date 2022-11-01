@@ -26,15 +26,17 @@ Mijn startniveau is: hier je startniveau (kies uit zwart, rood óf blauw)
   <summary>De eerste versie/schets van je ontwerp & je persoonlijke uitdaging</summary>
 
   ### De eerste versie/schets:
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="eerste versie/schets">
+  #### Concept 1
+  <img src="readme-images/schets-concept1.jpg" width="51%" alt="Concept 1 - schets 1"> <img src="readme-images/schets-concept1-2.jpg" width="45%" alt="Concept 1 - schets 2">
 
+  #### Concept 2
+  <img src="readme-images/schets-concept2.jpg" width="48%" alt="Concept 2 - schets 1"> <img src="readme-images/schets-concept2-2.jpg" width="48%" alt="Concept 2 - schets 3">  <img src="readme-images/schets-concept2-1.jpg" width="97%" alt="Concept 2 - schets 2"> 
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Vormen en elementen maken in CSS
+  - Interactie met JS
+  - Micro animaties
  
 </details>
 
