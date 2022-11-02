@@ -4,39 +4,44 @@
 
 /* naar een idee van Jen Simmons */
 *, *::after, *::before {
-  box-sizing:border-box;  
-}
-
-body {
-  margin:0;
-  background-color: peachpuff;
-  /* display: flex;
-  flex-direction: column; */
-  display: grid;
-  place-content: center;
+  box-sizing: border-box;  
 }
 
 button:not([disabled]) {
-  cursor:pointer;
+  cursor: pointer;
 }
-
-
-
-
 
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
 
 :root {
-  --color-headings:black;
+  --color-headings:white;
+  --color-background: #2D3047;
   --color-egg: rgb(230 230 230);
-  --color-egg-shadow: rgb(0 0 0 / 0.2);
-  --color-egg-highlight: rgb(255 255 255 / 0.3);
-  --color-yoshigreen: green;
-  --color-white: white;
-}
+  --color-egg-shadow: rgb(0 0 0 / .2);
+  --color-egg-highlight: rgb(255 255 255 / .3);
+  --color-eggspots: rgb(23 171 23);
+  --color-button: rgb(23 171 23);
+  --color-button-hover: rgb(21 116 21);;
 
+  --color-white: #fff;
+  --color-yellow: rgb(232 232 39);
+  --color-pink: rgb(255 141 189);
+  --color-lightblue: rgb(70 172 255);
+  --color-orange: rgb(255 182 109);
+  --color-red: rgb(255 70 70);
+  --color-black: rgb(59 59 59);
+  --color-blue: rgb(74 72 219);
+  --color-brown: rgb(129 83 23);
+  --color-purple: rgb(217 93 242);
+
+
+  /* Index of list items */
+  --index: 0;
+  /* Position of carousel */
+  --position: 0;
+}
 
 
 
@@ -44,19 +49,30 @@ button:not([disabled]) {
 /********************/
 /* ALGEMENE STYLING */
 /********************/
-/* header {
-  order: 1;
-} */
 
-main {
-  perspective: 40em;
-  
+body {
+  margin:0;
+  background-color: var(--color-background);
+  /* display: flex;
+  flex-direction: column; */
+  display: grid;
+  place-content: center;
+}
+
+header {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 3em;
 }
 
 header section {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 4em;
+
 }
 
 header section button:first-of-type,
@@ -69,17 +85,34 @@ header section button:nth-of-type(2) {
   font-size: 1.8em;
   text-align: center;
 
-  background-color: var(--color-yoshigreen);
+  background-color: var(--color-button);
   color: var(--color-white);
   border: unset;
   border-radius: 50%;
+
+  transition: .25s;
 }
 
+header section button:hover {
+  background-color: var(--color-button-hover);
+  transform: scale(1.05);
+}
+
+main {
+  display: grid;
+  place-items: start center;
+}
 
 h1 {
   color: var(--color-headings);
   font-family: puffin-arcade-nerf, sans-serif;
   text-align: center;
+  font-size: 3em;
+  letter-spacing: .2em;
+}
+
+h2 {
+  color: var(--color-eggspots)
 }
 
 h2,
@@ -87,39 +120,67 @@ li,
 button,
 p {
   font-family: mundial, sans-serif;
-  font-weight: 300;
 }
 
 ol {
+  /* Define position of carousel */
+
+  /* Reset styling */
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 6em 0 0 0;
+  display: grid;
 
-  position: relative;;
+  width: 10em;
+  /* display: flex; */
+
+  position: relative;
   /* order: 2; */
 
-  width: 100%;
-  height: 100%;
-  transform: translateZ(-10em);
+  /* transform: translateZ(-10em); */
   transform-style: preserve-3d;
+  perspective:20em;
+	perspective-origin:center -3em;
+  /* width: 100vw;
+  height: 100vh; */
+  /* transition: .5s; */
 
 }
 
 ol li {
   position: absolute;
-  width: 10em;
-  height: 14em;
+  width: 12em;
+  height: 16em;
   left: 1em;
   top: 1em;
 
-  transform: var(--transform);
-  transition: transform 1.5s ease-in-out;
+  grid-column-start:1;
+	grid-row-start:1;
+
+  /* Place li item towards center and back on circle axis */
+  transform:
+			translatez(-30em)
+			rotatey(calc(36deg * var(--position)  + 360deg / 10 * var(--index)))
+			translatez(30em)
+			rotatey(calc(-36deg * var(--position) + -360deg / 10 * var(--index)));
+
+      transition: .5s;
 }
 
+ol li:nth-of-type(1) { --index: 0;}
+ol li:nth-of-type(2) { --index: 1;}
+ol li:nth-of-type(3) { --index: 2;}
+ol li:nth-of-type(4) { --index: 3;}
+ol li:nth-of-type(5) { --index: 4;}
+ol li:nth-of-type(6) { --index: 5;}
+ol li:nth-of-type(7) { --index: 6;}
+ol li:nth-of-type(8) { --index: 7;}
+ol li:nth-of-type(9) { --index: 8;}
+ol li:nth-of-type(10) { --index: 9;}
 
 ol li button {
   width: 10em;
-  height: 14em;
+  aspect-ratio: 1/1.4;
   position: relative;
 
   display: grid;
@@ -130,21 +191,49 @@ ol li button {
 
 }
 
-ol li:nth-child(1) { transform: rotateY(0) translateZ(20em); }
-ol li:nth-child(2) { transform: rotateY(36deg) translateZ(20em); }
-ol li:nth-child(3) { transform: rotateY(72deg) translateZ(20em); }
-ol li:nth-child(4) { transform: rotateY(108deg) translateZ(20em); }
-ol li:nth-child(5) { transform: rotateY(144deg) translateZ(20em); }
-ol li:nth-child(6) { transform: rotateY(180deg) translateZ(20em); }
-ol li:nth-child(7) { transform: rotateY(216deg) translateZ(20em); }
-ol li:nth-child(8) { transform: rotateY(252deg) translateZ(20em); }
-ol li:nth-child(9) { transform: rotateY(288deg) translateZ(20em); }
-ol li:nth-child(10) { transform: rotateY(324deg) translateZ(20em); }
+/* Change egg colors */
+ol li:nth-of-type(2) button {
+  --color-eggspots: var(--color-yellow);
+}
+  
+ol li:nth-of-type(3) button {
+  --color-eggspots: var(--color-pink);
+}
+
+ol li:nth-of-type(4) button {
+  --color-eggspots: var(--color-lightblue);
+}
+
+ol li:nth-of-type(5) button {
+  --color-eggspots: var(--color-orange);
+}
+
+ol li:nth-of-type(6) button {
+  --color-eggspots: var(--color-red);
+}
+
+ol li:nth-of-type(7) button {
+  --color-eggspots: var(--color-black);
+}
+
+ol li:nth-of-type(8) button {
+  --color-eggspots: var(--color-blue);
+}
+
+ol li:nth-of-type(9) button {
+  --color-eggspots: var(--color-brown);
+}
+
+ol li:nth-of-type(10) button {
+  --color-eggspots: var(--color-purple);
+}
+
 
 ol li button img {
-  width: 8em;
+  width: 7em;
   height: auto;  
   z-index: -1;
+  padding-bottom: 2em;
 }
 
 ol li button:before,
@@ -168,29 +257,50 @@ ol li button:after {
     inset -.5em -.5em 1em var(--color-egg-highlight);
 
   background-image:
-		radial-gradient(closest-side circle, var(--color-yoshigreen) 100%, transparent),
-    radial-gradient(closest-side circle,var(--color-yoshigreen) 100%, transparent),
-		radial-gradient(closest-side circle,var(--color-yoshigreen) 100%, transparent);
+		radial-gradient(closest-side circle, var(--color-eggspots) 100%, transparent),
+    radial-gradient(closest-side circle,var(--color-eggspots) 100%, transparent),
+		radial-gradient(closest-side circle,var(--color-eggspots) 100%, transparent);
 	background-size: 50% 50%, 40% 40%, 60% 60%;
 	background-position: -40% 20%, 110% -30%, 90% 100%;
 	background-repeat: no-repeat;
+
+  transition: .5s;
 }
 
 /* Created clip-paths with Clippy: https://bennettfeely.com/clippy/*/
 ol li button:before {
   clip-path: polygon(100% 0, 100% 100%, 88% 84%, 76% 58%, 52% 52%, 35% 21%, 20% 18%, 0 0);
+  /* Remove gap */
+  transform: rotate(-45deg) translateY(.08em);
 }
 
 ol li button:after {
   clip-path: polygon(0 100%, 100% 100%, 88% 84%, 76% 58%, 52% 52%, 35% 21%, 20% 18%, 0 0);
 }
 
-ol li button:hover:before {
+ol li button:hover:before,
+ol li button:focus:before {
   transform: translate(-1em, -4em) rotate(-60deg);
   transition: .5s;
 }
 
+main > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
 
+article {
+  position: absolute;
+  right: 0;
+  top: 0;
 
+  width: 40em;
+  height: 40em; 
+  background-color: rgb(149 240 149 / .5);
 
+  padding: 6em;
+
+  border-radius: 100%;
+}
