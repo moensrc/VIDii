@@ -172,32 +172,40 @@ Mijn startniveau is: zwart
 
 5. Ei vorm CSS (Codepen van Sanne) https://codepen.io/shooft/pen/OJEMxNV
 
-7. 3D Circular Carousel demo (3D transforms) https://3dtransforms.desandro.com/carousel
+6. 3D Circular Carousel demo (3D transforms) https://3dtransforms.desandro.com/carousel
 
-8. Clip path animaties (CSS-tricks) https://css-tricks.com/animating-with-clip-path/
+7. Clip path animaties (CSS-tricks) https://css-tricks.com/animating-with-clip-path/
 
-9. Clippy voor custom clippath (Clippy | Bennett Feely) https://bennettfeely.com/clippy/
+8. Clippy voor custom clippath (Clippy | Bennett Feely) https://bennettfeely.com/clippy/
 
-10. Circular Carousel met jquery (Github repo) https://github.com/sgb-io/jquery.circular-carousel
+9. Circular Carousel met jquery (Github repo) https://github.com/sgb-io/jquery.circular-carousel
 
-11. Transform values/properties (Mozilla) https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+10. Transform values/properties (Mozilla) https://developer.mozilla.org/en-US/docs/Web/CSS/transform
 
-12. 3D Circular Carousel (Codepen) https://codepen.io/claudiulazar/pen/OdvVOo
+11. 3D Circular Carousel (Codepen) https://codepen.io/claudiulazar/pen/OdvVOo
 
-13. Grid guide (CSS-tricks) https://css-tricks.com/snippets/css/complete-guide-grid/
+12. Grid guide (CSS-tricks) https://css-tricks.com/snippets/css/complete-guide-grid/
 
-14. RotateY uses (Mozilla) https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateY
+13. RotateY uses (Mozilla) https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateY
 
-15. Grid guide (Stackoverflow) https://stackoverflow.com/questions/18601932/css-3d-transform-perspective-grid
+14. Grid guide (Stackoverflow) https://stackoverflow.com/questions/18601932/css-3d-transform-perspective-grid
 
-16. CSS variabelen aanpassen met JS (CSS-tricks) https://css-tricks.com/updating-a-css-variable-with-javascript/
+15. CSS variabelen aanpassen met JS (CSS-tricks) https://css-tricks.com/updating-a-css-variable-with-javascript/
 
-17. Carousel (Codepen van Sanne) https://codepen.io/moensrc/pen/PoaNzeJ?editors=1100
+16. Carousel (Codepen van Sanne) https://codepen.io/moensrc/pen/PoaNzeJ?editors=1100
 
-18.
+17. Arrow Keys JS (Tutorialspoint) https://www.tutorialspoint.com/detecting-arrow-key-presses-in-javascript
 
-19.
+18. Arrow Keys JS (Plain English) https://javascript.plainenglish.io/how-to-detect-arrow-key-presses-in-javascript-2c38192de0e8
+
+19. Arrow keys keyCode Deprecated, alternative (Stackoverflow) https://stackoverflow.com/questions/35394937/keyboardevent-keycode-deprecated-what-does-this-mean-in-practice
 
 20.
+
+21.
+
+22.
+
+23.
 
 </details>
