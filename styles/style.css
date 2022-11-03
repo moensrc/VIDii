@@ -66,24 +66,29 @@ html {
 /********************/
 
 body {
+  position: relative;
   margin:0;
   background-color: var(--color-background);
 
-  width: 100vmax;
+  /* width: 100vmax; */
   height: 100vh;
 
   display: grid;
   place-content: center;
 
   overflow: hidden;
+  user-select: none;
 }
 
 header {
-  position: fixed;
-  bottom: 0;
+  /* position: fixed; */
+  /* bottom: 0; */
   left: 0;
   right: 0;
-  padding-bottom: 12em;
+  /* padding-bottom: 12em; */
+
+  height: 20em;
+  position: absolute;
 }
 
 header section {
@@ -94,7 +99,7 @@ header section {
 }
 
 header section h2 {
-  font-size: 4em;
+  font-size: 2em;
 }
 
 header section button {
@@ -103,7 +108,7 @@ header section button {
   width: 2em;
   height: 2em;
 
-  font-size: 6em;
+  font-size: 2em;
   text-align: center;
 
   background-color: var(--color-button);
@@ -129,9 +134,9 @@ h1 {
   color: var(--color-heading1);
   font-family: puffin-arcade-nerf, sans-serif;
   text-align: center;
-  font-size: 5em;
+  font-size: 2em;
   letter-spacing: .2em;
-  padding-bottom: 1em;
+  /* padding-bottom: 1em; */
 }
 
 h2 {
@@ -164,6 +169,10 @@ ol {
   /* width: 100vw;
   height: 100vh; */
   /* transition: .5s; */
+
+  /* left: 0;
+  margin-left: -5em;
+  right: 0; */
 }
 
 ol li {
@@ -341,27 +350,32 @@ ul li article.visible {
 
   header {
     padding-bottom: 3em;
+    bottom: 0;
+    height: 15em;
   }
   
-  header section h2 {
+  /* header section h2 {
     font-size: 1.8em;
-  }
+  } */
   
   header section button {
-    font-size: 1.8em;
     width: 2em;
   }
 
-  header h1 {
+  /* header h1 {
     font-size: 3em;
-  }
+  } */
 
-  h1 {
-    padding-bottom: 0;
-    }
 
   ol {
     top: 20vmin;
     /* transform: scale(1); */
+
+    
+  /* left: unset;
+  margin-left: 0;
+  right: unset; */
   }
+
+  
 }
