@@ -11,6 +11,7 @@ var yearIndex = 0;
 
 // Buttons (eieren)
 var SMWbutton = document.querySelector("ol li:first-of-type button");
+var SMWarticle = document.querySelector("ul li:first-of-type article")
 var SMKbutton = document.querySelector("ol li:nth-of-type(2) button");
 var SMW2button = document.querySelector("ol li:nth-of-type(3) button");
 var SMRPGbutton = document.querySelector("ol li:nth-of-type(4) button");
@@ -22,6 +23,10 @@ var YWWbutton = document.querySelector("ol li:nth-of-type(9) button");
 var YCWbutton = document.querySelector("ol li:nth-of-type(10) button");
 
 var position = 0;
+
+SMWbutton.addEventListener("click", function() {
+    SMWarticle.classList.toggle("visible");
+})
 
 // Rotate carousel
 leftButton.addEventListener("click", rotateLeft);
@@ -39,7 +44,7 @@ function rotateRight() {
     position--
     root.style.setProperty('--position', position);
     // setCurrentYear();
-    console.log(position);
+    // console.log(position);
 
     nextYear()
 
@@ -82,14 +87,12 @@ function updateYear(){
 }
 
 // Code inspired from https://www.tutorialspoint.com/detecting-arrow-key-presses-in-javascript
-document.onkeydown = function (e) {
-    switch (e.keyCode) {
-        case 37:
-            console.log("Left key is pressed.");
+document.onkeydown = function (event) {
+    switch (event.key) {
+        case 'ArrowLeft':
             rotateLeft()
             break;
-        case 39:
-            console.log("Right key is pressed.");
+        case 'ArrowRight':
             rotateRight()
             break;
     }

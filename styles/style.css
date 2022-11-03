@@ -1,7 +1,6 @@
 /*************/
 /* CSS RESET */
 /*************/
-
 /* naar een idee van Jen Simmons */
 *, *::after, *::before {
   box-sizing: border-box;  
@@ -11,20 +10,35 @@ button:not([disabled]) {
   cursor: pointer;
 }
 
+/* Answer from https://stackoverflow.com/questions/5721904/make-body-fill-entire-screen */
+html {
+  height: 100vh;
+}
+
+/* html, body {
+  margin: 0;
+  height: 100%;
+} */
+
+
+
+
+
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
 
 :root {
-  --color-headings:white;
-  --color-background: #2D3047;
+  --color-heading1:black;
+  --color-background: rgb(255, 201, 216);
   --color-egg: rgb(230 230 230);
   --color-egg-shadow: rgb(0 0 0 / .2);
   --color-egg-highlight: rgb(255 255 255 / .3);
-  --color-eggspots: rgb(23 171 23);
+  --color-eggspots: var(--color-green);
   --color-button: rgb(23 171 23);
   --color-button-hover: rgb(21 116 21);;
 
+  --color-green: rgb(23 171 23);
   --color-white: #fff;
   --color-yellow: rgb(232 232 39);
   --color-pink: rgb(255 141 189);
@@ -46,6 +60,7 @@ button:not([disabled]) {
 
 
 
+
 /********************/
 /* ALGEMENE STYLING */
 /********************/
@@ -53,10 +68,14 @@ button:not([disabled]) {
 body {
   margin:0;
   background-color: var(--color-background);
-  /* display: flex;
-  flex-direction: column; */
+
+  width: 100vmax;
+  height: 100vh;
+
   display: grid;
   place-content: center;
+
+  overflow: hidden;
 }
 
 header {
@@ -64,7 +83,7 @@ header {
   bottom: 0;
   left: 0;
   right: 0;
-  padding-bottom: 3em;
+  padding-bottom: 12em;
 }
 
 header section {
@@ -72,17 +91,19 @@ header section {
   align-items: center;
   justify-content: center;
   height: 4em;
-
 }
 
-header section button:first-of-type,
-header section button:nth-of-type(2) {
-  margin: 1em;
-  padding: .3em;
-  width: 2em;
-  height: 2.1em;
+header section h2 {
+  font-size: 4em;
+}
 
-  font-size: 1.8em;
+header section button {
+  margin: .5em;
+  padding: 0.3em;
+  width: 2em;
+  height: 2em;
+
+  font-size: 6em;
   text-align: center;
 
   background-color: var(--color-button);
@@ -101,14 +122,16 @@ header section button:hover {
 main {
   display: grid;
   place-items: start center;
+
 }
 
 h1 {
-  color: var(--color-headings);
+  color: var(--color-heading1);
   font-family: puffin-arcade-nerf, sans-serif;
   text-align: center;
-  font-size: 3em;
+  font-size: 5em;
   letter-spacing: .2em;
+  padding-bottom: 1em;
 }
 
 h2 {
@@ -123,18 +146,15 @@ p {
 }
 
 ol {
-  /* Define position of carousel */
-
-  /* Reset styling */
-  list-style: none;
-  padding: 0;
-  margin: 6em 0 0 0;
   display: grid;
-
+  padding: 0;
+  /* margin: 6em 0 0 0; */
+  /* transform: scale(2); */
   width: 10em;
   /* display: flex; */
+  list-style: none;
 
-  position: relative;
+  position: absolute;
   /* order: 2; */
 
   /* transform: translateZ(-10em); */
@@ -144,7 +164,6 @@ ol {
   /* width: 100vw;
   height: 100vh; */
   /* transition: .5s; */
-
 }
 
 ol li {
@@ -164,7 +183,7 @@ ol li {
 			translatez(30em)
 			rotatey(calc(-36deg * var(--position) + -360deg / 10 * var(--index)));
 
-      transition: .5s;
+  transition: .5s;
 }
 
 ol li:nth-of-type(1) { --index: 0;}
@@ -228,7 +247,6 @@ ol li:nth-of-type(10) button {
   --color-eggspots: var(--color-purple);
 }
 
-
 ol li button img {
   width: 7em;
   height: auto;  
@@ -255,6 +273,7 @@ ol li button:after {
     inset 1em 2em 1em var(--color-egg-shadow),
     inset -1em -3em 1em var(--color-egg-highlight),
     inset -.5em -.5em 1em var(--color-egg-highlight);
+
 
   background-image:
 		radial-gradient(closest-side circle, var(--color-eggspots) 100%, transparent),
@@ -290,17 +309,59 @@ main > ul {
   margin: 0;
 }
 
-
 article {
   position: absolute;
   right: 0;
   top: 0;
 
-  width: 40em;
-  height: 40em; 
-  background-color: rgb(149 240 149 / .5);
+  transform: translateX(100%);
+  transition: .5s;
 
-  padding: 6em;
+  width: 36em;
+  height: 100vh; 
+  background-color: rgb(149 240 149 / .8);
 
-  border-radius: 100%;
+  padding: 8em;
+
+  border-radius: 100% 0 0 100%;
+}
+
+/* Class added by JS */
+ul li article.visible {
+  transform: translateX(0);
+}
+
+
+/* Media query min-width 426px (mobile) */
+@media only screen and (min-width: 426px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  header {
+    padding-bottom: 3em;
+  }
+  
+  header section h2 {
+    font-size: 1.8em;
+  }
+  
+  header section button {
+    font-size: 1.8em;
+    width: 2em;
+  }
+
+  header h1 {
+    font-size: 3em;
+  }
+
+  h1 {
+    padding-bottom: 0;
+    }
+
+  ol {
+    top: 20vmin;
+    /* transform: scale(1); */
+  }
 }
