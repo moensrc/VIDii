@@ -13,6 +13,7 @@ button:not([disabled]) {
 /* Answer from https://stackoverflow.com/questions/5721904/make-body-fill-entire-screen */
 html {
   height: 100vh;
+  overflow: hidden;
 }
 
 /* html, body {
@@ -78,6 +79,15 @@ body {
 
   overflow: hidden;
   user-select: none;
+
+  /* Hide scrollbars */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
 }
 
 header {
