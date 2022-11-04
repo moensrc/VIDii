@@ -2,16 +2,21 @@
 var leftButton = document.querySelector("header section button:first-of-type");
 var rightButton = document.querySelector("header section button:nth-of-type(2)");
 var yearText = document.querySelector("header section h2");
+var title = document.querySelector("h1");
 var body = document.querySelector("body");
 var root = document.querySelector(":root");
 
 // Update year
 var years = ["1990", "1992", "1995", "1996", "1996", "1998", "2002", "2003", "2015", "2019"]
 var yearIndex = 0;
+// var eggs = document.querySelectorAll("ol li");
+// var eggsArray = Array.prototype.slice.call(eggs);
 
-// Buttons (eieren)
+// Eieren 
 var SMWbutton = document.querySelector("ol li:first-of-type button");
-var SMWarticle = document.querySelector("ul li:first-of-type article")
+var SMWli = document.querySelector("ul li:first-of-type");
+var SMWcross = document.querySelector("ul li:first-of-type article button")
+
 var SMKbutton = document.querySelector("ol li:nth-of-type(2) button");
 var SMW2button = document.querySelector("ol li:nth-of-type(3) button");
 var SMRPGbutton = document.querySelector("ol li:nth-of-type(4) button");
@@ -24,13 +29,23 @@ var YCWbutton = document.querySelector("ol li:nth-of-type(10) button");
 
 var position = 0;
 
-SMWbutton.addEventListener("click", function() {
-    SMWarticle.classList.toggle("visible");
-})
-
 // Rotate carousel
 leftButton.addEventListener("click", rotateLeft);
 rightButton.addEventListener("click", rotateRight);
+
+
+// Listen to arrow keys as events
+// Code inspired from https://www.tutorialspoint.com/detecting-arrow-key-presses-in-javascript
+document.onkeydown = function (event) {
+    switch (event.key) {
+        case 'ArrowLeft':
+            rotateLeft()
+            break;
+        case 'ArrowRight':
+            rotateRight()
+            break;
+    }
+ };
 
 function rotateLeft() {
     // Increment position before setting property, because value is otherwise updated aftwerwards
@@ -47,7 +62,6 @@ function rotateRight() {
     // console.log(position);
 
     nextYear()
-
 }
 
 
@@ -62,7 +76,7 @@ function rotateRight() {
 //     yearText.innerText = year;
 // }
 
-
+// Update year
 function previousYear(){
     yearIndex--;
     // Wrap the position to the end if it goes out of bounds
@@ -86,14 +100,26 @@ function updateYear(){
     yearText.innerText = years[yearIndex];
 }
 
-// Code inspired from https://www.tutorialspoint.com/detecting-arrow-key-presses-in-javascript
-document.onkeydown = function (event) {
-    switch (event.key) {
-        case 'ArrowLeft':
-            rotateLeft()
-            break;
-        case 'ArrowRight':
-            rotateRight()
-            break;
+
+
+//  Open information
+SMWbutton.addEventListener("click", displaySMW);
+SMWcross.addEventListener("click", displaySMW);
+
+// function displayFigureSMW() {
+//     SMWfigure.classList.toggle("visible");
+// }
+
+function displaySMW() {
+    SMWli.classList.toggle("visible");
+    SMWbutton.classList.toggle("open");
+
+    // Toggle Text if Card is folded out
+    if (title.innerHTML === "Hatch a Yoshi!") {
+        title.textContent = "Super Mario World";
+    } else {
+        title.innerHTML = "Hatch a Yoshi!";
     }
- };
+};
+
+

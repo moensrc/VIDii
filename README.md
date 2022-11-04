@@ -47,26 +47,50 @@ Mijn startniveau is: zwart
 ## Voortgang/Feedback 1
 
 <details>
-  <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
+  <summary>Mijn bevindingen + wijzigingen </summary>
 
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  De layout van de elementen past nog niet echt bij het karakter Yoshi. 
 
-  #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  #### Oplossing:
+  Bij Yoshi denk je eerder aan ronde vormen inplaats van hoekige vormen. Denk hierbij aan zijn eigen bouw die uit rondingen bestaat en natuurlijk ook zijn iconische ei. 
 
+  Ik heb dit opgelost door meer schetsen te maken met een oplossing voor dit probleem: Hoe geef ik de informatie weer in ronde vormen of cirkels?
+
+  <img src="./" alt="Schetsen van layouts met cirkels">
+  <!-- Schetsen van cirkel layout -->
 
 
   ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  Het geluid balkje is visueel niet speels en erg statisch.
 
-  #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  #### Oplossing:
+  Het lijkt me een goed idee om een interactie toe te voegen aan Yoshi of het ei met geluiden van zijn stem uit die tijd bijvoorbeeld. Om het dynamisch en ook toegankelijk te maken had ik ook het idee om dan de tekst te laten verschijnen die Yoshi dan zegt.
 
+  <img src="./" alt="Schetsen van Layouts met interactief geluid">
+    <!-- Schetsen van idee geluid -->
 
 
   ### Bevinding 3:
-  ...
+  Er is nog niet echt een 'easter egg' of extra toevoeging.
+
+  #### Oplossing:
+  Dit is nog iets wat ik moet onderzoeken. Ik wil graag eerst de basis en functionaliteiten hebben staan en wanneer ik daar tijd voor heb zal ik mij hier verder in verdiepen.
+
+
+  ### Bevinding 4:
+  Layout van informatie is nog erg statisch
+
+  #### Oplossing:
+  Voor de teksten in mijn schetsen staan grote blokken met lopende tekst. Dit is erg saai en past dus niet goed bij Yoshi's karakter. Het is zeer statisch. 
+
+
+
+  ### Bevinding 5:
+  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+
+  #### Oplossing:
+  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
 </details>
 
@@ -200,12 +224,16 @@ Mijn startniveau is: zwart
 
 19. Arrow keys keyCode Deprecated, alternative (Stackoverflow) https://stackoverflow.com/questions/35394937/keyboardevent-keycode-deprecated-what-does-this-mean-in-practice
 
-20.
+20. Overflow hidden mobile (w3schools) https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp
 
-21.
+21. Toggle Text JS (w3schools) https://www.w3schools.com/howto/howto_js_toggle_text.asp
 
-22.
+22. Generating Cubic bezier values (cubic-bezier) https://cubic-bezier.com/
 
-23.
+23. 
+
+24. 
+
+25.
 
 </details>

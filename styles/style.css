@@ -40,11 +40,16 @@ html {
   --color-button-hover: rgb(21 116 21);;
 
   --color-green: rgb(23 171 23);
+  --color-green-seethrough: rgb(149 240 149 / .8);
   --color-white: #fff;
   --color-yellow: rgb(232 232 39);
+  --color-yellow-seethrough: rgba(243 243 86 / .6);
   --color-pink: rgb(255 141 189);
+  --color-pink-seethrough: rgba(255 184 213 / .6);
   --color-lightblue: rgb(70 172 255);
+  --color-lightblue-seethrough: rgba(111 188 251 / .6);
   --color-orange: rgb(255 182 109);
+  --color-orange-seethrough: rgba(254 200 145 / .6);
   --color-red: rgb(255 70 70);
   --color-black: rgb(59 59 59);
   --color-blue: rgb(74 72 219);
@@ -142,7 +147,7 @@ main {
 
 h1 {
   color: var(--color-heading1);
-  font-family: puffin-arcade-nerf, sans-serif;
+  font-family: puffin-arcade-nerf, impact, sans-serif;
   text-align: center;
   font-size: 2em;
   letter-spacing: .2em;
@@ -197,10 +202,10 @@ ol li {
 
   /* Place li item towards center and back on circle axis */
   transform:
-			translatez(-30em)
-			rotatey(calc(36deg * var(--position)  + 360deg / 10 * var(--index)))
-			translatez(30em)
-			rotatey(calc(-36deg * var(--position) + -360deg / 10 * var(--index)));
+			translateZ(-30em)
+			rotateY(calc(36deg * var(--position)  + 360deg / 10 * var(--index)))
+			translateZ(30em)
+			rotateY(calc(-36deg * var(--position) + -360deg / 10 * var(--index)));
 
   transition: .5s;
 }
@@ -316,8 +321,9 @@ ol li button:after {
   clip-path: polygon(0 100%, 100% 100%, 88% 84%, 76% 58%, 52% 52%, 35% 21%, 20% 18%, 0 0);
 }
 
-ol li button:hover:before,
-ol li button:focus:before {
+/* 
+ol li button:focus:before, */
+ol li button:hover:before {
   transform: translate(-1em, -4em) rotate(-60deg);
   transition: .5s;
 }
@@ -328,28 +334,138 @@ main > ul {
   margin: 0;
 }
 
-article {
+ul li article,
+ul li figure {
+  transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+}
+
+li article {
   position: absolute;
   right: 0;
   top: 0;
-
-  transform: translateX(100%);
-  transition: .5s;
-
   width: 36em;
   height: 100vh; 
-  background-color: rgb(149 240 149 / .8);
-
   padding: 8em;
 
+  transform: translateX(100%);
+  
   border-radius: 100% 0 0 100%;
+  /* Add blur to what's behind the article */
+  backdrop-filter: blur(.25em);
 }
 
-/* Class added by JS */
-ul li article.visible {
-  transform: translateX(0);
+li article section:nth-of-type(2) ul {
+  list-style: none;
+  padding: 0;
 }
 
+li article section:nth-of-type(2) ul li {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1em;
+
+}
+
+li article section:nth-of-type(2) ul li img {
+  height: auto;
+  width: 2.5em;
+  padding-right: 1em;
+}
+
+li figure {
+  position: absolute;
+  bottom:2em;
+  left:2em;
+  display: grid;
+  place-content: center;
+  width: 22em;
+  height: 22em;
+
+  border-radius: 50%;
+  transform: translateX(-120%) rotate(0deg);
+
+  /* transition: .6s; */
+}
+
+
+
+li figure img {
+  width: 15em;
+  height: auto;
+}
+
+li figure figcaption {
+  padding-top: 1em;
+}
+
+/* Colors for circles in ul */
+li:first-of-type article,
+li:first-of-type figure {
+  background-color: var(--color-green-seethrough);
+}
+
+li:nth-of-type(2) article,
+li:nth-of-type(2) figure {
+  background-color: var(--color-yellow-seethrough);
+}
+
+
+
+
+/* Classes added by JS */
+li.visible article {
+  transform: translateX(10%);
+}
+
+li.visible figure {
+  transform: translate(0, 0) rotate(-6deg);
+}
+
+ul li.scale-up {
+  transform: scale(1.2);
+}
+
+
+
+ol li .open,
+ol li .open img {
+  transition: .5s;
+}
+
+ol li .open:before {
+  transform: translate(0, 0) rotate(-90deg);
+  opacity: 0;
+}
+
+
+ol li .open img {
+  z-index: 10;
+  animation: jump-out .6s 1 .1s forwards;
+  /* transform: translateY(4em) scale(1.3); */
+}
+
+/* Yoshi jumps out of his egg */
+/* Cubic-bezier generated with https://cubic-bezier.com/ */
+@keyframes jump-out {
+  0% {
+    transform: translateY(0) scale(1);
+    animation-timing-function: cubic-bezier(.15, 0, 0, 1);
+  }
+  80% {
+    transform: translateY(-6em) scale(1.2);
+    animation-timing-function: cubic-bezier(.5, 0, .5, 1.2);
+  }
+  100% {
+    transform: translateY(4em) scale(1.5);
+  }
+}
+
+
+
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
 
 /* Media query min-width 426px (mobile) */
 @media only screen and (min-width: 426px) {
@@ -363,10 +479,7 @@ ul li article.visible {
     bottom: 0;
     height: 15em;
   }
-  
-  /* header section h2 {
-    font-size: 1.8em;
-  } */
+
   
   header section button {
     width: 2em;
