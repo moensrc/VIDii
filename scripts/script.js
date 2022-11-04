@@ -103,12 +103,9 @@ function updateYear(){
 
 
 //  Open information
+// Super Mario World
 SMWbutton.addEventListener("click", displaySMW);
 SMWcross.addEventListener("click", displaySMW);
-
-// function displayFigureSMW() {
-//     SMWfigure.classList.toggle("visible");
-// }
 
 function displaySMW() {
     SMWli.classList.toggle("visible");
@@ -122,4 +119,41 @@ function displaySMW() {
     }
 };
 
+//  Open information
+// Super Mario Kart
 
+
+//  Open information
+// Super Mario World 2: Yoshi's Island
+
+
+//  Open information
+// Super Mario RPG: Legend of the Seven stars
+
+
+//  Open information
+// Super Mario 64 Cameo
+
+
+//  Open information
+// Super Mario RPG: Legend of the Seven stars
+
+
+//  Open information
+// Yoshi's story
+
+
+//  Open information
+// Super Mario sunshine
+
+
+//  Open information
+// Super Mario 64 DS
+
+
+//  Open information
+// Yoshi's Woolly World
+
+
+//  Open information
+// Yoshi's Crafted World
