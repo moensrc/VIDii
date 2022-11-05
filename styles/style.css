@@ -1,3 +1,57 @@
+/**************/
+/* FONT FACES */
+/**************/
+
+/* Arcade typeface for H1 */
+@font-face {
+  font-family: 'Arcade';
+  src: url("../fonts/arcade_n-webfont.woff2") format("woff2"),
+       url("../fonts/arcade_n-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Sans-serif typeface for remainder of text */
+@font-face {
+  font-family: "Adventor";
+  src: url("../fonts/texgyreadventor-regular-webfont.woff2") format("woff2"),
+       url("../fonts/texgyreadventor-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: "AdventorItalic";
+  src: url("../fonts/texgyreadventor-italic-webfont.woff2") format("woff2"),
+       url("../fonts/texgyreadventor-italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: "AdventorBold";
+  src: url("../fonts/texgyreadventor-bold-webfont.woff2") format("woff2"),
+       url("../fonts/texgyreadventor-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: "AdventorBoldItalic";
+  src: url("../fonts/texgyreadventor-bolditalic-webfont.woff2") format("woff2"),
+       url("../fonts/texgyreadventor-bolditalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+
 /*************/
 /* CSS RESET */
 /*************/
@@ -16,11 +70,6 @@ html {
   overflow: hidden;
 }
 
-/* html, body {
-  margin: 0;
-  height: 100%;
-} */
-
 
 
 
@@ -30,33 +79,41 @@ html {
 /*********************/
 
 :root {
-  --color-heading1:black;
+  /* Colors */
+  --color-heading1-2:black;
   --color-background: rgb(255, 201, 216);
+
   --color-egg: rgb(230 230 230);
   --color-egg-shadow: rgb(0 0 0 / .2);
   --color-egg-highlight: rgb(255 255 255 / .3);
   --color-eggspots: var(--color-green);
+
   --color-button: rgb(23 171 23);
-  --color-button-hover: rgb(21 116 21);;
+  --color-button-hover: rgb(21 116 21);
 
   --color-green: rgb(23 171 23);
   --color-green-seethrough: rgb(149 240 149 / .8);
   --color-white: #fff;
   --color-yellow: rgb(232 232 39);
-  --color-yellow-seethrough: rgba(243 243 86 / .6);
+  --color-yellow-seethrough: rgb(243 243 86 / .6);
   --color-pink: rgb(255 141 189);
-  --color-pink-seethrough: rgba(255 184 213 / .6);
+  --color-pink-seethrough: rgb(255 184 213 / .6);
   --color-lightblue: rgb(70 172 255);
-  --color-lightblue-seethrough: rgba(111 188 251 / .6);
+  --color-lightblue-seethrough: rgb(111 188 251 / .6);
   --color-orange: rgb(255 182 109);
-  --color-orange-seethrough: rgba(254 200 145 / .6);
+  --color-orange-seethrough: rgb(255 210 164 / .6);
   --color-red: rgb(255 70 70);
+  --color-red-seethrough: rgb(255 124 124 / .6);
   --color-black: rgb(59 59 59);
+  --color-black-seethrough: rgb(86 86 86 / .6);
   --color-blue: rgb(74 72 219);
+  --color-blue-seethrough: rgb(115 113 233 / .6);
   --color-brown: rgb(129 83 23);
+  --color-brown-seethrough: rgb(179 155 123 / .6);
   --color-purple: rgb(217 93 242);
+  --color-purple-seethrough: rgb(238 152 255 / .6);
 
-
+  /* Variables */
   /* Index of list items */
   --index: 0;
   /* Position of carousel */
@@ -90,10 +147,42 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
   display: none;
 }
+
+h1 {
+  margin-top: 2em;
+
+  line-height: 1.2em;
+  text-align: center;
+
+  /* Sets width so it doesn't pass sections */
+  max-width: 15em;
+}
+
+h1,
+header section h2 {
+  font-family: "Arcade", impact, sans-serif;
+  font-size: 1.5em;
+  color: var(--color-heading1-2);
+}
+
+h3 {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+
+h2,
+h3,
+li,
+button,
+p {
+  font-family: "Adventor", Helvetica, Arial, sans-serif;
+}
+
 
 header {
   /* position: fixed; */
@@ -117,10 +206,6 @@ header section {
   align-items: center;
   justify-content: center;
   height: 4em;
-}
-
-header section h2 {
-  font-size: 2em;
 }
 
 header section button,
@@ -151,35 +236,6 @@ main {
   display: grid;
   place-items: start center;
 
-}
-
-
-h1 {
-  margin-top: 2em;
-  color: var(--color-heading1);
-  font-family: puffin-arcade-nerf, impact, sans-serif;
-  text-align: center;
-  font-size: 2em;
-  letter-spacing: .2em;
-  max-width: 10em;
-  /* padding-bottom: 1em; */
-}
-
-h2,
-h3,
-li,
-button,
-p {
-  font-family: mundial, sans-serif;
-}
-
-h2 {
-  color: var(--color-eggspots);
-}
-
-h3 {
-  text-transform: uppercase;
-  letter-spacing: .2em;
 }
 
 
@@ -374,6 +430,12 @@ li article {
   backdrop-filter: blur(.25em);
 }
 
+li article section:first-of-type ul {
+  list-style: "✿   ";
+}
+
+
+
 li article section:nth-of-type(2) ul {
   list-style: none;
   padding: 0;
@@ -396,7 +458,7 @@ li figure {
   display: none;
 }
 
-/* Colors for circles in ul */
+/* Colors for background li items */
 li:first-of-type article,
 li:first-of-type figure {
   background-color: var(--color-green-seethrough);
@@ -407,6 +469,47 @@ li:nth-of-type(2) figure {
   background-color: var(--color-yellow-seethrough);
 }
 
+li:nth-of-type(3) article,
+li:nth-of-type(3) figure {
+  background-color: var(--color-pink-seethrough);
+}
+
+li:nth-of-type(4) article,
+li:nth-of-type(4) figure {
+  background-color: var(--color-lightblue-seethrough);
+}
+
+li:nth-of-type(5) article,
+li:nth-of-type(5) figure {
+  background-color: var(--color-orange-seethrough);
+}
+
+li:nth-of-type(6) article,
+li:nth-of-type(6) figure {
+  background-color: var(--color-red-seethrough);
+}
+
+li:nth-of-type(7) article,
+li:nth-of-type(7) figure {
+  background-color: var(--color-black-seethrough);
+}
+
+
+li:nth-of-type(8) article,
+li:nth-of-type(8) figure {
+  background-color: var(--color-blue-seethrough);
+}
+
+li:nth-of-type(9) article,
+li:nth-of-type(9) figure {
+  background-color: var(--color-brown-seethrough);
+}
+
+li:nth-of-type(10) article,
+li:nth-of-type(10) figure {
+  background-color: var(--color-purple-seethrough);
+}
+
 
 
 
@@ -415,9 +518,9 @@ li.visible article {
   transform: translateY(5%);
 }
 
-li.visible figure {
+/* li.visible figure {
   transform: translate(0, 0) rotate(-6deg);
-}
+} */
 
 
 ol li .open,
@@ -469,7 +572,6 @@ ol li .open img {
 
   h1 {
     margin-top: 0;
-    max-width: 12em;
   }
 
   header {
@@ -511,15 +613,21 @@ ol li .open img {
 
     /* Place out of screen (to right) */
     transform: translateX(100%);
-
   }
 
+  li article h2 {
+    margin-bottom: .2em;
+  }
+
+
+  /* Only show game figure when screen is bigger */
   li figure {
     position: absolute;
-    bottom:2em;
-    left:2em;
+    bottom: 2em;
+    left: 2em;
     display: grid;
     place-content: center;
+    place-items: center;
     width: 22em;
     height: 22em;
   
@@ -530,6 +638,15 @@ ol li .open img {
   li figure img {
     width: 15em;
     height: auto;
+  }
+
+  /* Change dimensions for portait game covers */
+  li:nth-of-type(7) figure img,
+  li:nth-of-type(8) figure img,
+  li:nth-of-type(9) figure img,
+  li:nth-of-type(10) figure img {
+    width: auto;
+    height: 12em;
   }
   
   li figure figcaption {
@@ -550,6 +667,7 @@ ol li .open img {
     animation: jump-out2 .6s 1 .1s forwards;
   }
 
+  /* Alternative animation because of different scaling settings */
   @keyframes jump-out2 {
     0% {
       transform: translateY(0) scale(1);
