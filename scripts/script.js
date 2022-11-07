@@ -89,34 +89,34 @@ function rotateToOtherEgg(currentEggPosition, targetEggPosition) {
     }
 
     // Calculate the amount of turns to the right.
-    var turnsRight;
+    var amountOfTurnsRight;
     if (difference > 0) {
         // If difference is positive we can just turn right that many times
-        turnsRight = difference;
+        amountOfTurnsRight = difference;
     } else {
          // If difference is negative we need to turn right the amount of eggs - the difference
          // Since the difference is already a negative value, I add it to the amount of eggs
-         turnsRight = amountOfEggs + difference;
+         amountOfTurnsRight = amountOfEggs + difference;
     }
 
     // Calculate how many times we need to turn left
-    var turnsLeft;
+    var amountOfTurnsLeft;
     if (difference < 0) {
         // If difference is negative, turn left that many times
         // Multiply by -1 to make the negative value a positive number
-        turnsLeft = -1 * difference;
+        amountOfTurnsLeft = -1 * difference;
     } else {
         // If difference is positive we need to turn left the amount of eggs - the difference
-        turnsLeft = amountOfEggs - difference;
+        amountOfTurnsLeft = amountOfEggs - difference;
     }
 
     // Turn the egg the shortest way
-    if (turnsRight < turnsLeft) {
+    if (amountOfTurnsRight < amountOfTurnsLeft) {
         // Turn to the right
-        position = position - turnsRight;
+        position = position - amountOfTurnsRight;
     } else {
         // Turn to the left
-        position = position + turnsLeft;
+        position = position + amountOfTurnsLeft;
     }
 
     // Update the egg position.
