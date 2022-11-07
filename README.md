@@ -22,15 +22,18 @@ Mijn startniveau is: zwart
 
 # Je plan
 
-<details open>
+<details>
   <summary>De eerste versie/schets van je ontwerp & je persoonlijke uitdaging</summary>
 
   ### De eerste versie/schets:
   #### Concept 1
-  <img src="./readme-images/schets-concept1.JPG" width="51%" alt="Concept 1 - schets 1"> <img src="./readme-images/schets-concept1-2.JPG" width="45%" alt="Concept 1 - schets 2">
+  <img src="./readme-images/schets-concept1.JPG" width="51%" alt="Concept 1 - schets 1"> 
+  <img src="./readme-images/schets-concept1-2.JPG" width="45%" alt="Concept 1 - schets 2">
 
   #### Concept 2
-  <img src="./readme-images/schets-concept2.JPG" width="48%" alt="Concept 2 - schets 1"> <img src="./readme-images/schets-concept2-2.JPG" width="48%" alt="Concept 2 - schets 3"> <img src="./readme-images/schets-concept2-1.JPG" width="97%" alt="Concept 2 - schets 2"> 
+  <img src="./readme-images/schets-concept2.JPG" width="48%" alt="Concept 2 - schets 1"> 
+  <img src="./readme-images/schets-concept2-2.JPG" width="48%" alt="Concept 2 - schets 3"> 
+  <img src="./readme-images/schets-concept2-1.JPG" width="97%" alt="Concept 2 - schets 2"> 
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
@@ -50,16 +53,14 @@ Mijn startniveau is: zwart
   <summary>Mijn bevindingen + wijzigingen </summary>
 
   ### Bevinding 1:
-  De layout van de elementen past nog niet echt bij het karakter Yoshi. 
+  De layout van de elementen past nog niet echt bij het karakter en vormen van Yoshi. 
 
   #### Oplossing:
-  Bij Yoshi denk je eerder aan ronde vormen inplaats van hoekige vormen. Denk hierbij aan zijn eigen bouw die uit rondingen bestaat en natuurlijk ook zijn iconische ei. 
+  Bij Yoshi denk je eerder aan ronde vormen inplaats van hoekige vormen. Denk hierbij aan zijn eigen bouw die uit rondingen bestaat en natuurlijk ook zijn iconische ei. Ik heb dit opgelost door meer schetsen te maken met een oplossing voor dit probleem: Hoe geef ik de informatie weer in ronde vormen of cirkels?
 
-  Ik heb dit opgelost door meer schetsen te maken met een oplossing voor dit probleem: Hoe geef ik de informatie weer in ronde vormen of cirkels?
+  <img src="./readme-images/1-cirkels.jpg" alt="Schetsen van layouts met cirkels" width="49%">
 
-  <img src="./" alt="Schetsen van layouts met cirkels">
-  <!-- Schetsen van cirkel layout -->
-
+<br>
 
   ### Bevinding 2:
   Het geluid balkje is visueel niet speels en erg statisch.
@@ -67,74 +68,119 @@ Mijn startniveau is: zwart
   #### Oplossing:
   Het lijkt me een goed idee om een interactie toe te voegen aan Yoshi of het ei met geluiden van zijn stem uit die tijd bijvoorbeeld. Om het dynamisch en ook toegankelijk te maken had ik ook het idee om dan de tekst te laten verschijnen die Yoshi dan zegt.
 
-  <img src="./" alt="Schetsen van Layouts met interactief geluid">
-    <!-- Schetsen van idee geluid -->
+  <img src="./readme-images/1-geluid.jpg" alt="Schetsen van Layouts met interactief geluid">
 
+<br>
 
   ### Bevinding 3:
   Er is nog niet echt een 'easter egg' of extra toevoeging.
 
   #### Oplossing:
-  Dit is nog iets wat ik moet onderzoeken. Ik wil graag eerst de basis en functionaliteiten hebben staan en wanneer ik daar tijd voor heb zal ik mij hier verder in verdiepen.
+  Dit is nog iets wat ik moet onderzoeken. Ik wil graag eerst de basis en functionaliteiten hebben staan en daarna zal ik mij hier verder in verdiepen wanneer hier vrijheid van tijd beschikbaar is. In deze instantie is de gehele set-up van de JS en de carousel in CSS al een grote uitdaging.
 
+<br>
 
   ### Bevinding 4:
-  Layout van informatie is nog erg statisch
+  Layout van informatie in aside/section/article is nog erg statisch
 
   #### Oplossing:
-  Voor de teksten in mijn schetsen staan grote blokken met lopende tekst. Dit is erg saai en past dus niet goed bij Yoshi's karakter. Het is zeer statisch. 
+  Voor de teksten in mijn schetsen staan grote blokken met lopende tekst. Dit is erg saai en past dus niet goed bij Yoshi's karakter. Het is zeer statisch. Om dit op te lossen heb ik in vormen van cirkels gedacht, net als bij bevinding 1. Om de lijsten in deze article ook visueel interessanter te maken, heb ik gebruik gemaakt van markers en iconen.
 
+  <img src="./readme-images/1-cirkels.jpg" alt="Schetsen van layouts met cirkels" width="55%"> <img src="./readme-images/1-article.png" alt="Informatie Ei 1" width="42%">
 
+<br>
 
-  ### Bevinding 5:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
-
-  #### Oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
 </details>
 
 
 
 
+
 ## Voortgang/Feedback 2
 
-<details>
+<details open>
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
   
   ### Bevinding 1:
+  Mijn fonts zijn dependent op een derde partij (Adobe Fonts)
+
+  #### oplossing:
+  Ik wilde het graag voorkomen dat ik een Adobe fonts link zou gebruiken voor dit project. Ik heb fonts opgezocht, die ik heb geconverteerd naar .woff en .woff2 bestanden. Deze heb ik met behulp van @font-face in de CSS toegevoegd en aangeroepen.
+
+  <img src="./readme-images/2-fonts.png" alt="CSS: Font-faces" width="49%">
+
+<br>
+
+  ### Bevinding 2:
   Niet alle elementen kunnen nog met de tab key geselecteerd worden.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  De eieren en twee arrow buttons zijn hiervoor geschikt, enkel is dit niet fijn bij het doortabben. Het tabben op de eieren is hierbij altijd in dezelfde volgorde (chronologisch net als in de HTML). Ook gaat de tab vervolgens naar de ul en bij alle list-items tabt hij over de kruis-buttons. Ik heb hier nog geen oplossing voor gevonden.
+  Ik denk dat dit een kwestie is van de navigatie omzeilen en manipuleren.
 
+<br>
 
-  ### Bevinding 2:
+  ### Bevinding 3:
   States zijn nog niet geheel en consistent toegepast op verschillende elementen.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  De eieren en knoppen hadden nog geen states behalve de hover. Ik heb focus-visible states toegevoegd aan de eieren en buttons zowel als de hover. Deze zijn gelijk aan elkaar. Naast buttons zijn er geen andere interactieve elementen.
 
+  <img src="./readme-images/2-states.1.png" alt="CSS: States hover & focus-visible op Button" width="49%">
+  <img src="./readme-images/2-states.2.png" alt="CSS: States hover & focus-visible op Ei" width="49%">
+
+<br>
   
-  ### Bevinding 3:
+  ### Bevinding 4:
   Er mist nog geluid of een extra addition van speelsheid/easteregg
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Ik wilde nog graag geluiden toevoegen. Ik ben op zoek gegaan naar Yoshi's stem en geluiden die hij maakt in de specifieke games van de Yoshi's uit de tijdlijn. Hier ben ik erachter gekomen dat de iconische Yoshi stem pas 8 jaar na zijn eerste game appearance voorkwam. 
+  Ik heb dus gerelateerde sounds gezocht (sommigen van deze worden herbruikt in andere games, vooral de eerste paar jaren in de tijdlijn). Deze sounds staan in een array in de JS, deze worden afgespeeld wanneer de JS function showEggInformation wordt aangeroepen, wat met een click is op een ei. Met behulp van een index wordt het juiste geluid aan het juiste ei gekoppeld.
 
+  <img src="./readme-images/2-sounds.1.png" alt="JS: Sounds in Array" width="65%">
+  <img src="./readme-images/2-sounds.2.png" alt="JS: Play sounds in function" width="34%">
 
-  ### Bevinding 4:
-  Symbolen worden op mobile niet goed weergegeven. (Arrows en cross symbols)
-
-  #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
+<br>
 
   ### Bevinding 5:
+  Symbolen worden op mobile niet goed weergegeven. (Arrows en cross symbols)
+  Bovendien ook niet op macOS.
+  <img src="./readme-images/symbol-problem.jpg" alt="Symbols not visible on mobile" width="45%">
+
+  #### oplossing:
+  Om dit probleem geheel te voorkomen leek het mij geschikt om in de arrow buttons, de arrows zelf te maken met CSS pseudo elements. Met het :before pseudoelement heb ik het rechthoekige deel van de pijl gemaakt, en de :after is het driehoekige gedeelte. Deze zijn gepositioneerd met em waarden. Wanneer de button wordt geschaalt blijft de positie juist. 
+
+  <img src="./readme-images/2-arrows.png" alt="CSS: Arrow icons" width="49%">
+  <img src="./readme-images/2-arrowbuttons.png" alt="Arrow buttons" width="49%">
+
+  
+<br>
+
+  ### Bevinding 6:
   Verhoudingen van scale Yoshi jump-1 op mobile is niet mooi.
 
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+
+  <img src="./readme-images/2-jump-out.png" alt="CSS: Jump animation Yoshi" width="49%">
+  <img src="./readme-images/2-scaleyoshi.jpg" alt="Mobile Yoshi scale" width="49%">
+
+<br>
+
+  ### Bevinding 7:
+  De JS is een Horror oplossing (veel lines die heel makkelijk condensed kunnen worden)
+
+  <img src="./readme-images/2-horror.1.png" alt="Horror JS variabelen" width="49%">
+  <img src="./readme-images/2-horror.2.png" alt="Horror JS functies" width="49%">
+
+  #### oplossing:
+  Om de functionaliteiten aan te maken en te testen op alle eieren en content die daarbij hoort, heb ik voor elk ei een button, ul li en kruisbutton geselecteerd en voor elk ei ook een specifieke functie geschreven.
+  Met behulp van een for loop functie die de verschillende eieren in de ol een button, ul li en kruisbutton aanwijst. Deze wijst met eventlisteners op functies die dezelfde functionaliteiten hebben als de individuele functies van voorheen.
+
+  <img src="./readme-images/2-fixhorror.1.png" alt="JS Forloop" width="49%">
+  <img src="./readme-images/2-fixhorror.2.png" alt="JS show & hide information functions" width="49%">
 
 
 </details>
