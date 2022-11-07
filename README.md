@@ -103,23 +103,39 @@ Mijn startniveau is: zwart
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
   
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  Niet alle elementen kunnen nog met de tab key geselecteerd worden.
 
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
 
 
   ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  States zijn nog niet geheel en consistent toegepast op verschillende elementen.
+
+  #### oplossing:
+  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+
+  
+  ### Bevinding 3:
+  Er mist nog geluid of een extra addition van speelsheid/easteregg
 
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
 
+  ### Bevinding 4:
+  Symbolen worden op mobile niet goed weergegeven. (Arrows en cross symbols)
 
-  ### Bevinding 3:
-  ...
+  #### oplossing:
+  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+
+
+  ### Bevinding 5:
+  Verhoudingen van scale Yoshi jump-1 op mobile is niet mooi.
+
+  #### oplossing:
+  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+
 
 </details>
 
@@ -230,7 +246,7 @@ Mijn startniveau is: zwart
 
 22. Generating Cubic bezier values (cubic-bezier) https://cubic-bezier.com/
 
-23. 
+23. Making a triangle in before for arrow (Stackoverflow) https://stackoverflow.com/questions/19010044/looking-to-use-pseudo-elements-to-create-a-triangle
 
 24. 
 

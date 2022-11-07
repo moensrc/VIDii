@@ -56,6 +56,21 @@ var YCWcross = document.querySelector("ul li:nth-of-type(10) article button");
 var position = 0;
 
 
+// Audio sound effects 
+// Audio from:
+// https://www.youtube.com/watch?v=5lJcMPyE3xw&ab_channel=Mario%27sCastle
+// https://www.youtube.com/watch?v=UaZWx10WkBg&ab_channel=NintendoTV64
+// https://themushroomkingdom.net/media
+// https://www.superluigibros.com/sound-and-music
+// https://www.sounds-resource.com/
+var soundYoshiOriginal = new Audio("./audio/smOG-yoshi.wav");
+var soundYoshiRPG = new Audio("./audio/smrpg-yoshi.wav");
+var soundYoshiStory = new Audio("./audio/yoshi-story.mp3");
+var soundYoshiSunshine = new Audio("./audio/sms-yoshi.wav");
+var soundYoshi64DS = new Audio("./audio/64ds-yoshi.wav");
+var soundYoshiWW = new Audio("./audio/ycw.wav");
+var soundYoshiCW = new Audio("./audio/yww.wav");
+
 
 // Rotate carousel
 leftButton.addEventListener("click", rotateLeft);
@@ -74,7 +89,7 @@ document.onkeydown = function (event) {
  };
 
 function rotateLeft() {
-    // Increment position before setting property, because value is otherwise updated aftwerwards
+    // Increment position before setting property, because value is otherwise updated afterwards
     position++
     root.style.setProperty('--position', position);
     
@@ -88,6 +103,10 @@ function rotateRight() {
     // console.log(position);
 
     nextYear()
+}
+
+function rotate() {
+    root.style.setProperty('--position', position);
 }
 
 
@@ -143,6 +162,12 @@ function displaySMW() {
     } else {
         title.innerHTML = "Hatch a Yoshi!";
     }
+
+    // Play SMW Sound effect
+    soundYoshiOriginal.play();
+
+    position = 0;
+    rotate();
 };
 
 //  Open information
@@ -160,6 +185,13 @@ function displaySMK() {
     } else {
         title.innerHTML = "Hatch a Yoshi!";
     }
+
+    // Play SMW Sound effect
+    soundYoshiOriginal.play();
+
+    position = -1;
+    rotate();
+    // Now the year is'nt correct because it's not linked to the eggs
 };
 
 //  Open information
@@ -177,6 +209,9 @@ function displaySMW2() {
     } else {
         title.innerHTML = "Hatch a Yoshi!";
     }
+
+    // Play SMW Sound effect
+    soundYoshiOriginal.play();
 };
 
 //  Open information
@@ -194,6 +229,9 @@ function displaySMRPG() {
     } else {
         title.innerHTML = "Hatch a Yoshi!";
     }
+
+    // Play SMRPG Sound effect
+    soundYoshiRPG.play();
 };
 
 //  Open information
@@ -211,6 +249,9 @@ function displaySM64() {
     } else {
         title.innerHTML = "Hatch a Yoshi!";
     }
+
+    // Play SMW Sound effect 
+    soundYoshiOriginal.play();
 };
 
 //  Open information
@@ -228,9 +269,10 @@ function displayYS() {
     } else {
         title.innerHTML = "Hatch a Yoshi!";
     }
+
+    // Play YS Sound effect
+    soundYoshiStory.play();
 };
-
-
 
 //  Open information
 // Super Mario sunshine
@@ -247,6 +289,9 @@ function displaySMS() {
     } else {
         title.innerHTML = "Hatch a Yoshi!";
     }
+
+    // Play SMS Sound effect 
+    soundYoshiSunshine.play();
 };
 
 //  Open information
@@ -264,6 +309,9 @@ function displaySM64DS() {
     } else {
         title.innerHTML = "Hatch a Yoshi!";
     }
+
+    // Play 64DS Sound effect
+    soundYoshi64DS.play();
 };
 
 // Open information
@@ -281,8 +329,10 @@ function displayYWW() {
     } else {
         title.innerHTML = "Hatch a Yoshi!";
     }
-};
 
+    // Play WW Sound effect
+    soundYoshiWW.play();
+};
 
 // Open information
 // Yoshi's Crafted World
@@ -299,4 +349,8 @@ function displayYCW() {
     } else {
         title.innerHTML = "Hatch a Yoshi!";
     }
+
+    // Play CW Sound effect
+    soundYoshiCW.play();
 };
+
