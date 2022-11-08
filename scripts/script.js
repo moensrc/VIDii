@@ -5,6 +5,8 @@ var yearText = document.querySelector("header section h2");
 var title = document.querySelector("h1");
 // var body = document.querySelector("body");
 var root = document.querySelector(":root");
+var eggCarousel = document.querySelector("ol");
+var header = document.querySelector("header");
 
 // Year & Game Title
 var hatchText = "Hatch a Yoshi!";
@@ -167,6 +169,10 @@ function showEggInformation(eggIndex) {
     // Add the class "open" on the egg
     eggButton.classList.add("open");
 
+    // Add the class "move" to the header and ol
+    eggCarousel.classList.add("move");
+    header.classList.add("move");
+
     // Set the correct year and year text.
     title.textContent = gameTitles[eggIndex];
     yearText.innerText = years[eggIndex];
@@ -185,6 +191,10 @@ function hideEggInformation(eggIndex) {
 
     // Remove the class "open" on the egg
     eggButton.classList.remove("open");
+
+    // Remove the class "move" on the header and ol
+    eggCarousel.classList.remove("move");
+    header.classList.remove("move");
 
     // Set the title to the hatch text.
     title.textContent = hatchText;
