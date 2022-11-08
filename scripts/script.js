@@ -9,7 +9,7 @@ var root = document.querySelector(":root");
 // Year & Game Title
 var hatchText = "Hatch a Yoshi!";
 var years = ["1990", "1992", "1995", "1996", "1996", "1998", "2002", "2004", "2015", "2019"]
-var gameTitles = ["Super Mario World","Super Mario Kart", "Super Mario World 2: Yoshi's Island", "Super Mario RPG: Legend of the seven Stars", "Super Mario 64", "Yoshi's Story", "Super Mario Sunshine", "Super Mario 64 DS", "Yoshi's Woolly World", "Yoshi's Crafted World"]
+var gameTitles = ["Super Mario World", "Super Mario Kart", "Super Mario World 2: Yoshi's Island", "Super Mario RPG: Legend of the seven Stars", "Super Mario 64", "Yoshi's Story", "Super Mario Sunshine", "Super Mario 64 DS", "Yoshi's Woolly World", "Yoshi's Crafted World"]
 
 var yearIndex = 0;
 // Goes from -infinty to infinity. 0 is the center
@@ -55,7 +55,7 @@ for (let eggIndex = 0; eggIndex < amountOfEggs; eggIndex++) {
     const eggButton = getEggButton(eggIndex);
 
     // Add event listener to each egg
-    eggButton.addEventListener("click", function() {
+    eggButton.addEventListener("click", function () {
 
         // Close all the other info cards
         hideEggInformation(lastShownEggIndex);
@@ -72,7 +72,7 @@ for (let eggIndex = 0; eggIndex < amountOfEggs; eggIndex++) {
     const close = document.querySelectorAll("main > ul > li article button")[eggIndex];
 
     // Add event listener to each close button
-    close.addEventListener("click", function() {
+    close.addEventListener("click", function () {
         hideEggInformation(eggIndex);
     });
 }
@@ -81,7 +81,7 @@ for (let eggIndex = 0; eggIndex < amountOfEggs; eggIndex++) {
 function rotateToOtherEgg(currentEggPosition, targetEggPosition) {
     // The difference between the target egg and the current egg
     // These positions are always positive and from 0 to amountOfEggs - 1
-    var difference =  targetEggPosition - currentEggPosition;
+    var difference = targetEggPosition - currentEggPosition;
 
     // We do not need to rotate if we are the same egg
     if (difference == 0) {
@@ -94,9 +94,9 @@ function rotateToOtherEgg(currentEggPosition, targetEggPosition) {
         // If difference is positive we can just turn right that many times
         amountOfTurnsRight = difference;
     } else {
-         // If difference is negative we need to turn right the amount of eggs - the difference
-         // Since the difference is already a negative value, I add it to the amount of eggs
-         amountOfTurnsRight = amountOfEggs + difference;
+        // If difference is negative we need to turn right the amount of eggs - the difference
+        // Since the difference is already a negative value, I add it to the amount of eggs
+        amountOfTurnsRight = amountOfEggs + difference;
     }
 
     // Calculate how many times we need to turn left
@@ -128,10 +128,10 @@ function rotateToOtherEgg(currentEggPosition, targetEggPosition) {
 // Calculate the current egg index based on the position variable
 // Position is a number from -infinity to infinity, 0 is the center
 // Egg index is a number from 0 to amountOfEggs - 1. 0 for the first egg
-function calculateCurrentEggIndex(){
+function calculateCurrentEggIndex() {
     // If position is 0, then the first egg is selected
     // If position is -1, then the second egg is selected
-    
+
     // Use modulus to get the remainder of the division
     // If position is 25 or -25 for example, the movesWithoutCircles will be 5
     // This is used to remove the amount of times we have made full circles from the index
@@ -207,7 +207,7 @@ document.onkeydown = function (event) {
             rotateRight()
             break;
     }
- };
+};
 
 function rotateLeft() {
     // Add a position to the right with increment
@@ -217,7 +217,7 @@ function rotateLeft() {
     // Close open Yoshi Info when rotating with controls
     hideEggInformation(lastShownEggIndex);
 
-    previousYear()   
+    previousYear()
 }
 
 function rotateRight() {
@@ -230,7 +230,7 @@ function rotateRight() {
     nextYear()
 }
 
-function updateEggPosition(){
+function updateEggPosition() {
     // Set the position of the egg to the current egg index
     root.style.setProperty('--position', position);
 }
@@ -238,17 +238,17 @@ function updateEggPosition(){
 
 
 // Update year
-function previousYear(){
+function previousYear() {
     yearIndex--;
     // Wrap the position to the end if it goes out of bounds
     if (yearIndex < 0) {
         yearIndex = years.length - 1;
     }
     updateYear();
-    
+
 }
 
-function nextYear(){
+function nextYear() {
     yearIndex++;
     // Wrap the position to the beginning if it goes out of bounds
     if (yearIndex > years.length - 1) {
@@ -257,7 +257,7 @@ function nextYear(){
     updateYear();
 }
 
-function updateYear(){
+function updateYear() {
     // Update the year to the correct year according to the yearindex
     yearText.innerText = years[yearIndex];
 }

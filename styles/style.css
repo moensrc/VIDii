@@ -82,6 +82,7 @@ html {
 :root {
   /* Colors */
   --color-heading1-2:black;
+  --color-text: black;
   --color-background: rgb(255, 201, 216);
 
   --color-egg: rgb(230 230 230);
@@ -94,8 +95,8 @@ html {
   --color-button-arrow: #fff;
   --color-button-arrow-hover: rgb(21 116 21);
   --color-button-hover: #fff;
+  --color-link-hover: rgb(21 116 21);
 
-  --color-white: #fff;
   --color-green: rgb(23 171 23);
   --color-green-seethrough: rgb(149 240 149 / .8);
   --color-yellow: rgb(232 232 39);
@@ -107,9 +108,9 @@ html {
   --color-orange: rgb(255 182 109);
   --color-orange-seethrough: rgb(255 210 164 / .6);
   --color-red: rgb(255 70 70);
-  --color-red-seethrough: rgb(255 124 124 / .6);
+  --color-red-seethrough: rgb(255 133 133 / .6);
   --color-black: rgb(59 59 59);
-  --color-black-seethrough: rgb(86 86 86 / .6);
+  --color-black-seethrough: rgba(149, 149, 149, 0.8);
   --color-blue: rgb(74 72 219);
   --color-blue-seethrough: rgb(115 113 233 / .6);
   --color-brown: rgb(129 83 23);
@@ -124,6 +125,29 @@ html {
   --position: 0;
 }
 
+@media (prefers-color-scheme:dark) {
+  :root {
+    /* Change background and text color for contrast */
+    --color-heading1-2:white;
+    --color-background: rgb(45, 47, 52);
+    --color-text: white;
+
+    /* Change hover state, because it has a white background */
+    --color-button-arrow-hover: #fff;
+    --color-button-hover: rgb(21 116 21);
+
+    /* Change colors for article backgrounds for contrast */
+    --color-green-seethrough: rgba(101 161 101 / .8);
+    --color-yellow-seethrough: rgba(171 171 61 / .8);
+    --color-pink-seethrough: rgba(167 119 139 / .8);
+    --color-lightblue-seethrough: rgba(75 128 172 / .8);
+    --color-orange-seethrough: rgba(175 143 112 / .8);
+    --color-red-seethrough: rgba(176 93 93 / .8);
+    --color-blue-seethrough: rgba(80 78 159 / .8);
+    --color-brown-seethrough: rgba(128 111 89 / .8);
+    --color-purple-seethrough: rgba(154 98 165 / .8);
+  }
+}
 
 
 
@@ -155,8 +179,7 @@ body::-webkit-scrollbar {
 h1,
 h2,
 h3,
-p,
-ul li {
+p {
   user-select: none;
 }
 
@@ -190,6 +213,16 @@ p {
   font-family: "Adventor", Helvetica, Arial, sans-serif;
 }
 
+a {
+  color: var(--color-button);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
 
 
 
@@ -200,7 +233,7 @@ p {
 header {
   left: 0;
   right: 0;
-  z-index: 5;
+  z-index: 0;
   height: 10em;
   position: absolute;
 
@@ -229,7 +262,6 @@ ul li button {
   position: relative;
 
   background-color: var(--color-button);
-  color: var(--color-white);
   border: unset;
   border-radius: 50%;
 
@@ -358,7 +390,30 @@ ol li button {
 
   border: unset;
   background-color: transparent;
+}
 
+/* Select first Egg */
+/* Add animation as a state as help */
+/* Egg will shake, so user can see that the element is waiting to be clicked on */
+ol li:first-of-type button {
+  animation: shake-egg .6s 4 .5s forwards;
+
+  transform-origin: bottom center;
+}
+
+@keyframes shake-egg {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(4deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
 
 /* Change egg colors */
@@ -404,7 +459,7 @@ ol li:nth-of-type(10) button {
 }
 
 ol li button img {
-  width: 7em;
+  width: 6em;
   height: auto;  
   z-index: -1;
   padding-bottom: 2em;
@@ -473,11 +528,32 @@ ul li article,
 ul li figure {
   /* Cubic-bezier generated with https://cubic-bezier.com/ */
   transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+  color: var(--color-text);
 }
 
-ul li button {
-  font-size: 1.2em;
+ul li article button {
+  /* font-size: 1.2em; */
+  width: 1.2em;
+  height: 1.2em;
   margin: 0;
+}
+
+/* Cross symbol */
+ul li article button:before,
+ul li article button:after {
+  content:"";
+  position: absolute;
+  z-index: 2;
+  left:.55em;
+  top:.4em;
+  width:.1em;
+  height:.5em;
+  background-color: var(--color-button-arrow);
+  transform: rotate(-45deg);
+}
+
+ul li article button:after {
+  transform: rotate(45deg);
 }
 
 
@@ -491,11 +567,10 @@ li article {
   width: 100vw;
   height: 35vh; 
   padding: 15%;
-
   overflow-y: scroll;
 
   transform: translateY(100%);
-  
+
   border-radius: 100% 100% 0 0;
   /* Add blur to what's behind the article, like other eggs */
   backdrop-filter: blur(.25em);
@@ -594,10 +669,6 @@ li.visible article {
   transform: translateY(5%);
 }
 
-/* li.visible figure {
-  transform: translate(0, 0) rotate(-6deg);
-} */
-
 ol li .open,
 ol li .open img {
   transition: .5s;
@@ -612,7 +683,6 @@ ol li .open:before {
 ol li .open img {
   z-index: 10;
   animation: jump-out1 .6s 1 .1s forwards;
-  /* transform: translateY(4em) scale(1.3); */
 }
 
 /* Yoshi jumps out of his egg */
@@ -638,6 +708,39 @@ ol li .open img {
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
+
+/* Prefers reduced motion: reduce */
+@media (prefers-reduced-motion) {
+  /* Clicking on an egg does not rotate the carousel anymore */
+  /* Opening the egg is not smooth anymore */
+  /* Egg shell just disappears */
+  ol li,
+  ol li button:before,
+  ol li button:hover:before,
+  ol li button:focus-visible:before,
+  ul li article,
+  ul li figure,
+  ol li .open,
+  ol li .open img {
+  transition: none;
+}
+  
+  ol li .open,
+  ol li .open img {
+    transition: none;
+  }
+  
+  ol li .open:before {
+    transform: unset;
+    opacity: 0;
+  }
+  
+  ol li .open img {
+    transform: translateY(4em) scale(1.6);
+    animation:paused;
+  }
+
+}
 
 /* Media query min-width 27em (from mobile) */
 @media only screen and (min-width: 48em) {
@@ -755,6 +858,14 @@ ol li .open img {
     }
     100% {
       transform: translateY(4em) scale(1.7);
+    }
+  }
+
+  @media (prefers-reduced-motion) {
+    /* Stop animation on media query of min-width 27em */
+    ol li .open img {
+      transform:translateY(4em) scale(1.6);
+      animation:paused;
     }
   }
 
