@@ -7,11 +7,15 @@ var title = document.querySelector("h1");
 var root = document.querySelector(":root");
 var eggCarousel = document.querySelector("ol");
 var header = document.querySelector("header");
+var footerButton = document.querySelector("footer > button");
+var tongue = document.querySelector("main > img")
 
 // Year & Game Title
 var hatchText = "Hatch a Yoshi!";
 var years = ["1990", "1992", "1995", "1996", "1996", "1998", "2002", "2004", "2015", "2019"]
 var gameTitles = ["Super Mario World", "Super Mario Kart", "Super Mario World 2: Yoshi's Island", "Super Mario RPG: Legend of the seven Stars", "Super Mario 64", "Yoshi's Story", "Super Mario Sunshine", "Super Mario 64 DS", "Yoshi's Woolly World", "Yoshi's Crafted World"]
+
+// var tabIndexes = [4, 6, 8, 10, 12, 14, 16, 18, 20, 22]
 
 var yearIndex = 0;
 // Goes from -infinty to infinity. 0 is the center
@@ -31,6 +35,7 @@ var amountOfEggs = eggsParents.length;
 // // https://themushroomkingdom.net/media
 // // https://www.superluigibros.com/sound-and-music
 // // https://www.sounds-resource.com/
+var soundLick = new Audio("./audio/yoshilick.wav")
 var soundYoshiOriginal = new Audio("./audio/smOG-yoshi.wav");
 var soundYoshiRPG = new Audio("./audio/smrpg-yoshi.wav");
 var soundYoshiStory = new Audio("./audio/yoshi-story.mp3");
@@ -40,7 +45,6 @@ var soundYoshiWW = new Audio("./audio/ycw.wav");
 var soundYoshiCW = new Audio("./audio/yww.wav");
 // // Create array with audio variables
 var sounds = [soundYoshiOriginal, soundYoshiOriginal, soundYoshiOriginal, soundYoshiRPG, soundYoshiOriginal, soundYoshiStory, soundYoshiSunshine, soundYoshi64DS, soundYoshiWW, soundYoshiCW];
-
 
 
 // Get the egg button from the egg index of all egg list items
@@ -73,11 +77,18 @@ for (let eggIndex = 0; eggIndex < amountOfEggs; eggIndex++) {
     // Get the info element close button from the eggindex
     const close = document.querySelectorAll("main > ul > li article button")[eggIndex];
 
-    // Add event listener to each close button
+    // Add event listener of click to each close button
     close.addEventListener("click", function () {
         hideEggInformation(eggIndex);
     });
-}
+
+    // Add eventlistener of Escape button to each li
+    document.addEventListener ("keydown", (event) => {
+        if (event.key === 'Escape') {
+            hideEggInformation(eggIndex);
+        }
+    }
+    )};
 
 // Got help from my boyfriend with this function, I can explain it, ask me!
 function rotateToOtherEgg(currentEggPosition, targetEggPosition) {
@@ -165,6 +176,7 @@ function showEggInformation(eggIndex) {
 
     // Add the class "visible" on the infoElement
     infoElement.classList.add("visible");
+    infoElement.removeAttribute("inert");
 
     // Add the class "open" on the egg
     eggButton.classList.add("open");
@@ -188,6 +200,7 @@ function hideEggInformation(eggIndex) {
 
     // Remove the class "visible" on the infoElement
     infoElement.classList.remove("visible");
+    // infoElement.setAttribute("inert");
 
     // Remove the class "open" on the egg
     eggButton.classList.remove("open");
@@ -199,7 +212,6 @@ function hideEggInformation(eggIndex) {
     // Set the title to the hatch text.
     title.textContent = hatchText;
 }
-
 
 
 // Rotate carousel
@@ -270,4 +282,14 @@ function nextYear() {
 function updateYear() {
     // Update the year to the correct year according to the yearindex
     yearText.innerText = years[yearIndex];
+}
+
+// Easter egg: Yoshi lick 
+footerButton.addEventListener("click", lick) 
+
+function lick() {
+    soundLick.play();
+
+    tongue.classList.toggle("licking");
+    eggCarousel.classList.toggle("licking");
 }

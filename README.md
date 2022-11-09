@@ -99,8 +99,8 @@ Mijn startniveau is: zwart
 
 ## Voortgang/Feedback 2
 
-<details open>
-  <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
+<details>
+  <summary>Mijn bevindingen + wijzigingen</summary>
   
   ### Bevinding 1:
   Mijn fonts zijn dependent op een derde partij (Adobe Fonts)
@@ -182,6 +182,12 @@ Mijn startniveau is: zwart
   <img src="./readme-images/2-fixhorror.1.png" alt="JS Forloop" width="49%">
   <img src="./readme-images/2-fixhorror.2.png" alt="JS show & hide information functions" width="49%">
 
+  * Assign each egg a button, li and crossbutton
+  * Calculate which egg we are on (1-9 either neg or pos)
+  * Calculate how many turns left or right it needs to turn for the target click
+  * Turn the lowest amount of times
+  * Update the egg position
+
 
 </details>
 
@@ -190,27 +196,46 @@ Mijn startniveau is: zwart
 
 ## Voortgang/Feedback 3
 
-<details>
-  <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
+<details open>
+  <summary>Mijn bevindingen + wijzigingen</summary>
   
-  ### Bevinding 1:
+  ### De kleur van de achtergrond of achtergrond voelt nog kaal
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
 
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
+<br>
 
-
-  ### Bevinding 2:
+  ### Er mist een goede easter egg
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
 
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
+<br>
 
+  ### Font kan misschien in progressie van de game
+  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
 
-  ### Bevinding 3:
-  ...
+  #### oplossing:
+  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+
+<br>
+
+  ### Tab navigatie werkt niet ideaal
+  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+
+  #### oplossing:
+  Inert en Tab-index
+
+<br>
+
+  ### 
+  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+
+  #### oplossing:
+  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
 </details>
 

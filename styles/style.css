@@ -82,9 +82,11 @@ html {
 :root {
   /* Colors */
   /* General */
-  --color-heading1-2:black;
+  --color-heading1-2:white;
+  --color-heading-dark:black;
   --color-text: black;
-  --color-background: rgb(255, 201, 216);
+  --color-background: rgb(201 237 255);
+  --color-grass: rgb(0 102 51);
 
   /* Egg */
   --color-egg: rgb(230 230 230);
@@ -114,7 +116,7 @@ html {
   --color-red: rgb(255 70 70);
   --color-red-seethrough: rgb(255 133 133 / .6);
   --color-black: rgb(59 59 59);
-  --color-black-seethrough: rgba(149, 149, 149, 0.8);
+  --color-black-seethrough: rgb(123 123 123 / .8);
   --color-blue: rgb(74 72 219);
   --color-blue-seethrough: rgb(115 113 233 / .6);
   --color-brown: rgb(129 83 23);
@@ -132,13 +134,13 @@ html {
 @media (prefers-color-scheme:dark) {
   :root {
     /* Change background and text color for contrast */
-    --color-heading1-2:white;
+    --color-heading-dark: white;
     --color-background: rgb(45, 47, 52);
     --color-text: white;
 
     /* Change hover state, because it has a white background */
     --color-button-icon-hover: #fff;
-    --color-button-hover: rgb(21 116 21);
+    --color-button-hover: #006633;
 
     /* Change colors for article backgrounds for contrast */
     --color-green-seethrough: rgba(101 161 101 / .8);
@@ -163,7 +165,6 @@ html {
 body {
   position: relative;
   margin:0;
-  background-color: var(--color-background);
   /* width: 100vmax; */
   height: 100vh;
   display: grid;
@@ -173,6 +174,14 @@ body {
   /* Hide scrollbars */
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+
+  /* background:url("../images/grass.jpg"), var(--color-background); */
+  /* Background from deviant-art https://www.deviantart.com/razorthe6249th/art/Yoshis-Island-style-BG-76547321 */
+  background: url("../images/grass-landscape.png"), var(--color-background);
+  image-rendering: pixelated;
+
+  background-size: 400%;
+  background-position: 0% 30%;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -202,7 +211,7 @@ h1,
 header section h2 {
   font-family: "Arcade", impact, sans-serif;
   font-size: 1.5em;
-  color: var(--color-heading1-2);
+  color: var(--color-heading-dark);
 }
 
 h3 {
@@ -337,6 +346,10 @@ header section button:hover:after,
 header section button:focus-visible:after {
   border-top: .35em solid var(--color-button-icon-hover);
 }
+
+
+
+
 
 /****************/
 /* MAIN STYLING */
@@ -582,6 +595,7 @@ ul li article button:after {
   top:.4em;
   width:.1em;
   height:.5em;
+
   background-color: var(--color-button-icon);
   transform: rotate(-45deg);
 }
@@ -616,7 +630,7 @@ li article {
 
   border-radius: 100% 100% 0 0;
   /* Add blur to what's behind the article, like other eggs */
-  backdrop-filter: blur(.25em);
+  backdrop-filter: blur(.4em);
 }
 
 /* li article section:first-of-type ul {
@@ -633,7 +647,6 @@ li article section:nth-of-type(2) ul li {
   display: flex;
   align-items: center;
   padding-bottom: 1em;
-
 }
 
 li article section:nth-of-type(2) ul li img {
@@ -699,6 +712,50 @@ li:nth-of-type(10) figure {
   background-color: var(--color-purple-seethrough);
 }
 
+/* Yoshi's Tongue (easter egg) */
+main > img {
+  position: absolute;
+  left: 0;
+  top: 25vmin;
+  transform: scale(1.4) translateX(-100%);
+  transform-origin: left;
+}
+
+
+
+
+
+/**********/
+/* FOOTER */
+/**********/
+/* Footer has a secret button */
+footer {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  z-index: 5;
+}
+
+footer > button {
+  width: 5em;
+  height: 5em;
+
+  /* background-color: var(--color-grass);
+  color: var(--color-grass); */
+  border: none;
+  border-radius: 50%;
+  z-index: 1;
+
+  text-transform: uppercase;
+
+  opacity: 0;
+}
+
+footer > button:hover {
+  opacity: 1;
+  background-color: var(--color-button-hover);
+  color: var(--color-text);
+}
 
 
 
@@ -769,6 +826,10 @@ ol li .open img {
   ul li figure {
   transition: none;
 }
+
+  ol li:first-of-type button {
+  animation: none;
+  }
   
   ol li .open,
   ol li .open img {
@@ -785,12 +846,14 @@ ol li .open img {
     animation:paused;
   }
 
+
+  li:first-of-type article section:nth-of-type(2) ul li:nth-of-type(2) img,
+  li:nth-of-type(2) article section:nth-of-type(2) ul li:nth-of-type(2) img {
+    content: url("../images/shell.png");
+  }
 }
 
-/* 
-@media only screen and (min-width: 48em) {
-   
-} */
+
 
 /* TABLET */
 /* Media query min-width 55em (from tablet) */
@@ -798,10 +861,18 @@ ol li .open img {
   body {
     width: 100vw;
     height: 100vh;
+
+    background-position: 0% 40%;
+    background-size: cover;
   }
 
   h1 {
     margin-top: 0;
+  }
+
+  h1, 
+  header section h2 {
+    color: var(--color-heading1-2);
   }
 
   header {
@@ -933,9 +1004,40 @@ ol li .open img {
     padding-top: 1em;
   }
 
+  /* JS Classes by Classlist */
   /* Dont style JS class if higher than small laptop */
   ol.move,
   header.move {
     transform: unset;
   }
+
+  ol.licking {
+    animation: lick-move-eggs 1 .4s .3s forwards;
+  }
+
+  @keyframes lick-move-eggs {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100vw);
+    }
+  }
+
+  main > img.licking {
+    animation: lick-move-tongue 1 .6s forwards;
+  }
+
+  @keyframes lick-move-tongue {
+    0% {
+      transform: scale(1.4) translateX(-100%);
+    }
+    50% {
+      transform: scale(1.4) translateX(0);
+    }
+    100% {
+      transform: scale(1.4) translateX(-100%);
+    }
+  }
+  
 }
