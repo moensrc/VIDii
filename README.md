@@ -338,9 +338,9 @@ Mijn startniveau is: zwart
 
   ### Dit was lastig/Is niet gelukt:
   #### Niet gelukt:
-  * 4K media query
+  * 4K media query <br>
     Het toevoegen van een media query voor een groter scherm dan de desktop was mij niet gelukt in verband met een gebrek aan tijd. Ik zou deze nog graag willen toevoegen.
-  * Fonts aanpassen (zie Feedback 3)
+  * Fonts aanpassen (zie Feedback 3) </br>
     Het zoeken van fonts die geschikt zouden zijn voor deze 10 games is uitdagend, potentieel onmogelijk en tijdrovend. Hier had ik geen tijd voor. Ik ben zelf overigens wel erg blij met de uitkomst van de fonts.
 
   #### Dit was lastig:
