@@ -28,13 +28,13 @@ var eggsParents = document.querySelectorAll("ol li");
 var amountOfEggs = eggsParents.length;
 
 
-// // Audio sound effects 
-// // Audio from sources:
-// // https://www.youtube.com/watch?v=5lJcMPyE3xw&ab_channel=Mario%27sCastle
-// // https://www.youtube.com/watch?v=UaZWx10WkBg&ab_channel=NintendoTV64
-// // https://themushroomkingdom.net/media
-// // https://www.superluigibros.com/sound-and-music
-// // https://www.sounds-resource.com/
+// Audio sound effects 
+// Audio from sources:
+// https://www.youtube.com/watch?v=5lJcMPyE3xw&ab_channel=Mario%27sCastle
+// https://www.youtube.com/watch?v=UaZWx10WkBg&ab_channel=NintendoTV64
+// https://themushroomkingdom.net/media
+// https://www.superluigibros.com/sound-and-music
+// https://www.sounds-resource.com/
 var soundLick = new Audio("./audio/yoshilick.wav")
 var soundYoshiOriginal = new Audio("./audio/smOG-yoshi.wav");
 var soundYoshiRPG = new Audio("./audio/smrpg-yoshi.wav");
@@ -43,7 +43,7 @@ var soundYoshiSunshine = new Audio("./audio/sms-yoshi.wav");
 var soundYoshi64DS = new Audio("./audio/64ds-yoshi.wav");
 var soundYoshiWW = new Audio("./audio/ycw.wav");
 var soundYoshiCW = new Audio("./audio/yww.wav");
-// // Create array with audio variables
+// Create array with audio variables
 var sounds = [soundYoshiOriginal, soundYoshiOriginal, soundYoshiOriginal, soundYoshiRPG, soundYoshiOriginal, soundYoshiStory, soundYoshiSunshine, soundYoshi64DS, soundYoshiWW, soundYoshiCW];
 
 
@@ -267,7 +267,6 @@ function previousYear() {
         yearIndex = years.length - 1;
     }
     updateYear();
-
 }
 
 function nextYear() {
@@ -288,8 +287,10 @@ function updateYear() {
 footerButton.addEventListener("click", lick) 
 
 function lick() {
+    // Play licking sound
     soundLick.play();
 
+    // Toggle classes on click
     tongue.classList.toggle("licking");
     eggCarousel.classList.toggle("licking");
 }

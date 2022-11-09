@@ -50,6 +50,9 @@ Mijn startniveau is: zwart
 ## Voortgang/Feedback 1
 
 <details>
+  Feedback van: Milou (1/11)<br>
+  Voortgang eerste paar dagen
+
   <summary>Mijn bevindingen + wijzigingen </summary>
 
   ### Bevinding 1:
@@ -100,6 +103,9 @@ Mijn startniveau is: zwart
 ## Voortgang/Feedback 2
 
 <details>
+  Feedback van: Vanessa (7/11)<br>
+  Voortgang middelpunt
+
   <summary>Mijn bevindingen + wijzigingen</summary>
   
   ### Bevinding 1:
@@ -182,13 +188,6 @@ Mijn startniveau is: zwart
   <img src="./readme-images/2-fixhorror.1.png" alt="JS Forloop" width="49%">
   <img src="./readme-images/2-fixhorror.2.png" alt="JS show & hide information functions" width="49%">
 
-  * Assign each egg a button, li and crossbutton
-  * Calculate which egg we are on (1-9 either neg or pos)
-  * Calculate how many turns left or right it needs to turn for the target click
-  * Turn the lowest amount of times
-  * Update the egg position
-
-
 </details>
 
 
@@ -196,46 +195,89 @@ Mijn startniveau is: zwart
 
 ## Voortgang/Feedback 3
 
-<details open>
+  Feedback van: Sandra (9/11) <br>
+  Voortgang laatste dagen
+
+<details>
   <summary>Mijn bevindingen + wijzigingen</summary>
-  
-  ### De kleur van de achtergrond of achtergrond voelt nog kaal
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+<br>
+
+  ### Positionering en navigatie 
+  Het is van noodzaak dat de eggCarousel efficient en mooi draait. Wanneer je op een ei klikt moet die natuurlijk vooraan het scherm verschijnen.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Ik heb dit opgelost met meerdere JS functies. De functionaliteiten hiervan zijn simpelweg te halen uit deze opsomming:
+
+  * Calculate which egg we are on (1-9 either neg or pos) <br>
+    Door uit te rekenen op welk ei we nu zijn, weten we wat de positieve of negatieve positie is van de carousel.
+
+  * Calculate how many turns left or right it needs to turn for the target click <br>
+    Door te berekenen hoeveel eieren de carousel moet opschuiven, kan je concluderen welk getal van de twee lager is. Het lagere getal neem je, zodat de carousel via de snelste en kortste weg zal draaien.
+
+  * Turn the lowest amount of times <br> 
+    Draai daadwerkelijk de kortste weg na het concluderen van de laagste waarde.
+
+  * Update the egg position <br>
+  Plaats het ei op de juiste plek door de carousel te schuiven met (aantal eieren - kleinste weg) of (aantal eieren + kleinste weg) afhankelijk van de beweging naar links of rechts.
+
+    <img src="./readme-images/3-code-rotateeggs.png" alt="JS functie rotate eggs" width="49%">
+    <img src="./readme-images/3-code-position.png" alt="JS functie calculate position" width="49%">
+    <img src="./readme-images/3-code-update.png" alt="JS functie update position" width="45%">
+
+
+
+<br>  
+
+  ### De kleur van de achtergrond of achtergrond voelt nog kaal
+  De roze kleur is niet per se gemotiveerd door Yoshi zijn karakter en voegt bovendien niet veel toe. Met een dynamischere of leukere achtergrond krijgt de website meer karakter.
+
+  <img src="./readme-images/3-background.png" alt="Boring pink background" width="99%">
+
+  #### oplossing:
+  Ik ben op zoek gegaan naar afbeeldingen die te maken hebben met Yoshi of een soort landschap waarin Yoshi en zijn eieren kunnen staan. Hiervoor zocht ik specifiek op games waarin Yoshi een grote rol speelt, wat bij hem geassocieerd kan worden. 
+
+  <img src="./readme-images/3-background.1.png" alt="Background Desktop" width="78%"> <img src="./readme-images/3-background.2.png" alt="Background Mobile" width="21%"> 
+  <img src="./readme-images/3-background-code.png" alt="Code for background" width="99%">
 
 <br>
 
   ### Er mist een goede easter egg
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  Ik had nog niet nagedacht over een extra gag of toevoeging van een easter egg in mijn ontwerp.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Tijdens het derde feedbackgesprek kwam dit ook ter sprake. Sandra noemde dat het wel noodzakelijk is en ze heeft zeker gelijk. Wat ik heel erg met Yoshi associeer, is zijn tong en hoe hij verschillende dingen kan opeten. Een leuk grapje hierbij leek me dat hij iets uit het beeld op zou eten en dat het vervolgens verdwijnt. Dit met behulp van een verborgen button.
+
+  <img src="./readme-images/3-lick.gif" alt="Tongue licks the eggs away" width="99%">
 
 <br>
 
   ### Font kan misschien in progressie van de game
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  Nog een feedbackpunt voor een detail was dat het font van de titel van de game ook meer zou kunnen zeggen over het tijdperk of het spel, aangezien de huidige Arcade font niet per se past bij de huidige game-scene en huidige Yoshi.
+
+  <img src="./readme-images/3-fonts.png" alt="Fonts on screen" width="99%">  
+
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Ik heb hier verder niet iets specifieks gedaan, omdat het bovendien veel tijd zou kosten om verschillende geschikte en gratis fonts te vinden en toe te passen voor alle 10 games waar de Yoshi's uit komen. Ik zou een logo of een tekst in het juiste font toevoegen om de games te representeren.
 
 <br>
 
   ### Tab navigatie werkt niet ideaal
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  De tab navigatie klikte eerst door de OL met de egg-buttons en vervolgens door de UL waarin alle info-cards staan met de kruisbuttons. Hierdoor glitchde de pagina en liet hij na het tabben door het eggCarousel alle UL info-cards zien (bovendien ook zonder animatie).
 
   #### oplossing:
-  Inert en Tab-index
+  Ik heb om dit probleem op te lossen, gekeken naar verschillende HTML attributes: inert en tab-index. Met de inert attribute zet ik de ul li's by default op niet-selecteerbaar. Wanneer er een ei wordt aangeklikt/geopend, wordt deze attribute weggehaald met de JS show. Nu kan de gebruiker oneindig tabben door de eggCarousel maar ook wanneer hij een ei opent, de kruisbutton selecteren met de tab door de tab-index die de volgorde aanpast.
 
 <br>
 
-  ### 
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  ### Cursor aanpassing
+  Ik wilde graag ook iets doen met de cursor wanneer je over het ei heen hovert.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Een andere sterke associatie die ik heb met Yoshi, is dat op Super Mario Bros. Wii hij graag appels/bessen at van de bomen. Toen ik mijn onderzoek deed naar Yoshi en zijn game-appearances heb ik geleerd dat hij van veel fruitsoorten hoort en in andere games je ook fruit kan eten met Yoshi zijn character.
+  Om dit toe te passen heb ik de cursor on hover aangepast naar een appel. Het idee is, wanneer Yoshi de appel ziet, dat hij uit zijn ei wil komen. Hij neemt een kijkje uit zijn ei-schaal om deze appel beter te ruiken. Als je op hem klikt, 'voer' je hem de appel en daardoor verschijnt hij uit zijn ei.
+
+  <img src="./readme-images/3-cursor.jpg" alt="Appel als cursor" width="50%">
 
 </details>
 
@@ -244,23 +286,77 @@ Mijn startniveau is: zwart
 
 ## Reflectie
 
-<details>
+<details open>
   <summary>Mijn eindresultaat & persoonlijke ontwikkeling</summary>
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="final ontwerp">
+  <img src="./readme-images/3-background.1.png" alt="Final ontwerp desktop" width="49%">
+  <img src="./readme-images/4-opencard.png" alt="Ontwerp met open Infocard" width="49%">
 
+  <img src="./readme-images/4-eggs-tablet.png" alt="Final ontwerp tablet" width="73%">
+  <img src="./readme-images/4-eggs-mobile.png" alt="Final ontwerp mobile" width="26%">
+
+
+  <img src="./readme-images/4-opencard-tablet.png" alt="Ontwerp met open Infocard tablet" width="73%">
+  <img src="./readme-images/4-opencard-mobile.png" alt="Ontwerp met open Infocard mobile" width="26%">
+
+  <img src="./readme-images/3-lick.gif" alt="Tongue licks the eggs away" width="99%">
+  <img src="./readme-images/carousel.gif" alt="eggCarousel turning" width="99%">
+
+  Ik ben erg blij met mijn eindresultaat. Ik vind zelf dat het Yoshi goed karakteriseert. Ik ben tevreden met de nieuwe dingen die ik heb mogen leren tijdens dit project, zoals het maken van vormen, microinteracties en natuurlijk de ster van de show: de interactieve driedimensionale carousel.
+
+  <br>
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatje(s)
+  #### Ging goed
+  Het opstarten van de verschillende bestanden ging me goed af, dit voornamelijk omdat ik al wel ervaring en kennis heb met CSS en HTML. Het maken van de animaties vind ik erg leuk, waardoor dat ook erg motiveerd. Het helpt dat ik veel termen, properties en values al ken wanneer ik CSS schrijf.
+  Ik heb ook de tijd genomen om anderen te helpen met hun CSS en/of JS in de lessen.
+  * Het opzetten van de CSS en HTML
+  * Animaties maken en toevoegen
+  * Event listeners met JS en Classlist
+  * Custom properties
+  <br>
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+  #### Heb ik geleerd
+  * Een custom cursor toevoegen
+  * Belang van Font-faces
+  * Vormen maken met CSS
+
+  <img src="./readme-images/eggs-code.png" alt="Eggs code CSS" width="49%">
+
+  * Een driedimensioneel carousel maken
+
+    <img src="./readme-images/code-carousel.png" alt="Carousel code CSS" width="49%">
+    <img src="./readme-images/3-code-rotateeggs.png" alt="JS rotate eggs" width="49%">
+
+
+  * Het berekenen van de kortste weg naar een element in de carousel met JS
+  * Keydown events in JS als eventlisteners
+
+  <img src="./readme-images/3-keydown.png" alt="Keydowns code JS" width="49%">
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatje(s)
+  #### Niet gelukt:
+  * 4K media query
+    Het toevoegen van een media query voor een groter scherm dan de desktop was mij niet gelukt in verband met een gebrek aan tijd. Ik zou deze nog graag willen toevoegen.
+  * Fonts aanpassen (zie Feedback 3)
+    Het zoeken van fonts die geschikt zouden zijn voor deze 10 games is uitdagend, potentieel onmogelijk en tijdrovend. Hier had ik geen tijd voor. Ik ben zelf overigens wel erg blij met de uitkomst van de fonts.
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
+  #### Dit was lastig:
+  * Een driedimensioneel carousel maken <br>
+    De dimensie en het positioneren van de eieren was een grote uitdaging. Met een beetje hulp is het mij gelukt om deze bovendien ook juist te positioneren on click met de JavaScript.
+
+    <img src="./readme-images/code-carousel.png" alt="Carousel code CSS" width="49%">
+    <img src="./readme-images/3-code-rotateeggs.png" alt="JS rotate eggs" width="49%">
+
+  * De ei vorm maken in CSS <br>
+    Ik had hier moeite mee, omdat ik graag wilde dat het ei kon openen/gekraakt kon zijn, maar ik in de eerste instantie de button had gestyled als een ei.
+
+  * Time management
+    Niet specifiek aan de code of de opdracht. Het was lastig om in een korte tijd een sterk concept en goede code neer te zetten. Het was uitdagend om tijd ook na de werkgroepen efficient te gebruiken. Ik kwam vaak in de knoop in de lessen omdat ik andere mensen aan het helpen was, waardoor ik veel thuis heb moeten werken aan deze opdracht. 
+    Ik heb er veel tijd in gestoken en ben blij met het eindresultaat ondanks de tijdsdruk.
+
 </details>
 
 
@@ -268,8 +364,8 @@ Mijn startniveau is: zwart
 
 ## Bronnenlijst
 
-<details open>
-<summary>Bronnen</summary>
+<details>
+<summary>Bronnen Code</summary>
 
 <!-- Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg). -->
 
@@ -319,8 +415,25 @@ Mijn startniveau is: zwart
 
 23. Making a triangle in before for arrow (Stackoverflow) https://stackoverflow.com/questions/19010044/looking-to-use-pseudo-elements-to-create-a-triangle
 
-24. 
+24. Making a triangle in before for arrow (JS Fiddle) http://jsfiddle.net/Paulie_D/T2HuD/2/
 
-25.
+25. Inert (Mozilla) https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert
+
+26. Keydown event: Escape button (Stackoverflow) https://stackoverflow.com/questions/3369593/how-to-detect-escape-key-press-with-pure-js-or-jquery
+
+
+</details>
+
+<details>
+<summary>Bronnen Text/content</summary>
+1. IGN https://www.ign.com/articles/2010/05/24/yoshi-evolution-of-a-dinosaur
+
+2. YT https://www.youtube.com/watch?v=8H_i2RQipoU&ab_channel=MikeyTheMachineGaming
+
+3. YT https://www.youtube.com/watch?v=iGOWKHwD4s4&t=551s&ab_channel=ThomasGameDocs
+
+4. YT https://www.youtube.com/watch?v=VRl1NDi12_k&ab_channel=XCageGame
+
+5. Mario Wiki https://www.mariowiki.com/
 
 </details>

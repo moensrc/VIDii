@@ -165,7 +165,6 @@ html {
 body {
   position: relative;
   margin:0;
-  /* width: 100vmax; */
   height: 100vh;
   display: grid;
   place-content: center;
@@ -175,7 +174,6 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 
-  /* background:url("../images/grass.jpg"), var(--color-background); */
   /* Background from deviant-art https://www.deviantart.com/razorthe6249th/art/Yoshis-Island-style-BG-76547321 */
   background: url("../images/grass-landscape.png"), var(--color-background);
   image-rendering: pixelated;
@@ -494,6 +492,8 @@ ol li button img {
   padding-bottom: 2em;
 }
 
+/* Create egg */
+/* Shape with pseudoelements */
 ol li button:before,
 ol li button:after {
   content: "";
@@ -573,7 +573,6 @@ ul li figure {
 }
 
 ul li article button {
-  /* font-size: 1.2em; */
   width: 1.2em;
   height: 1.2em;
   margin: 0 0 0 calc(50% - 0.8em);
@@ -632,10 +631,6 @@ li article {
   /* Add blur to what's behind the article, like other eggs */
   backdrop-filter: blur(.4em);
 }
-
-/* li article section:first-of-type ul {
-  list-style: "✿   ";
-} */
 
 
 li article section:nth-of-type(2) ul {
